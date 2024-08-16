@@ -65,7 +65,7 @@ function SignupPage() {
       success();
       setTimeout(() => {
         navigate('/auth/login');
-      }, 1000);
+      }, 200);
     } else {
       setTextError(responseJson.message);
     }
