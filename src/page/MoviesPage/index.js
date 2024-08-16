@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { DivFilm } from './styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAllMovies } from '../../redux/action/home/movies';
@@ -10,6 +10,8 @@ import Banner from '../../components/Banner';
 import SearchComponent from '../../components/Search';
 import fetchDataLook from '../../utils/fetdataLook';
 import { Helmet } from 'react-helmet-async';
+import { CheckLoginContext } from '../../contexts/LoginContext';
+import { fetchOrderFromUserId } from '../../redux/action/order';
 
 const MoviesPage = (props) => {
   const [data, setData] = useState();
@@ -20,10 +22,13 @@ const MoviesPage = (props) => {
   const [options, setOptions] = useState([]);
   const [options1, setOptions1] = useState([]);
   const [options2, setOptions2] = useState([]);
+  const { userInfo } = useContext(CheckLoginContext);
 
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.moviesSlice);
   const category = useSelector((state) => state.categorySlice);
+  const order = useSelector((state) => state.orderSlice);
+
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await fetch(API_GET_NEW_MOVIES);
@@ -38,6 +43,7 @@ const MoviesPage = (props) => {
       dispatch(fetchAllCategory()),
       fetchMovies(),
       fetchDataLook(setOptions, setOptions1, setOptions2),
+      dispatch(fetchOrderFromUserId(userInfo.userId)),
     ]);
   }, [dispatch]);
 
@@ -95,7 +101,8 @@ const MoviesPage = (props) => {
     !dataVideo ||
     !options ||
     !options1 ||
-    !options2
+    !options2 ||
+    !order
   ) {
     return <LoadingPage />;
   }
@@ -106,7 +113,12 @@ const MoviesPage = (props) => {
         <title>Movies Showhub</title>
         <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
-      <Banner dataVideo={dataVideo} isLoading={isLoading} data={dataBanner} />
+      <Banner
+        dataVideo={dataVideo}
+        isLoading={isLoading}
+        data={dataBanner}
+        order={order}
+      />
       <SearchComponent
         options={options}
         options1={options1}

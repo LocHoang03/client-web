@@ -16,6 +16,7 @@ const MyFavoritePage = () => {
 
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.moviesSlice);
+  const series = useSelector((state) => state.seriesSlice);
 
   useEffect(() => {
     const handleResize = () => {
@@ -49,18 +50,21 @@ const MyFavoritePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (movies) {
+      if (movies && series) {
         let arrayData = [];
         for (let item of movies.data) {
           if (item.listUserIdLike.includes(userInfo.userId))
             arrayData.push(item);
         }
-
+        for (let item of series.data) {
+          if (item.listUserIdLike.includes(userInfo.userId))
+            arrayData.push(item);
+        }
         setData(arrayData);
       }
     };
     fetchData();
-  }, [movies]);
+  }, [movies, series, userInfo]);
 
   if (!movies || !data) {
     return <LoadingPage />;

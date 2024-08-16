@@ -17,7 +17,9 @@ function VideoActionMovies({
   data,
   isLike,
   handleClickLikeSeries,
+  handleClickLikeMovies,
   handleRatingSeries,
+  handleRatingMovies,
   isRating,
   dataValueUserRating,
   type,
@@ -26,8 +28,12 @@ function VideoActionMovies({
   seriesId,
 }) {
   const navigate = useNavigate();
-  const handleLikeSeries = () => {
-    handleClickLikeSeries();
+  const handleLike = () => {
+    if (type === 'movies') {
+      handleClickLikeMovies();
+    } else {
+      handleClickLikeSeries();
+    }
   };
   const handleChangeEpisode = (episode) => {
     navigate('/watching-series/' + seriesId + '/' + episode);
@@ -52,7 +58,7 @@ function VideoActionMovies({
       </DivVideo>
       <DivContentVideo>
         <DivAction>
-          <ButtonAction onClick={() => handleLikeSeries()}>
+          <ButtonAction onClick={() => handleLike()}>
             {isLike ? (
               <Tag color="#FFD700">Liked</Tag>
             ) : (
@@ -73,7 +79,13 @@ function VideoActionMovies({
                 disabled={isRating ? true : false}
                 value={dataValueUserRating}
                 allowHalf
-                onChange={(value) => handleRatingSeries(value)}
+                onChange={(value) => {
+                  if (type === 'movies') {
+                    handleRatingMovies(value);
+                  } else {
+                    handleRatingSeries(value);
+                  }
+                }}
               />
             </div>
           </RatingAction>

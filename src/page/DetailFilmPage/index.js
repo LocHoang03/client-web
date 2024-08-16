@@ -138,7 +138,6 @@ const DetailFilmPage = (props) => {
     if (isWatching) {
       navigate('/film/watching-movies/' + filmId);
     } else {
-      setIsModalOpen(true);
       confirm({
         title: 'Operation failed!!',
         content: `Your service package cannot watch this movie, please upgrade to a higher service 

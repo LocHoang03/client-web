@@ -61,7 +61,7 @@ function LoginPage() {
           success();
           setTimeout(() => {
             navigate('/two-factor-authentication');
-          }, 200);
+          }, 1000);
         }
       }
     } else {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Content from '../../components/Content';
 import { DivHomePage, DivLoading } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +11,8 @@ import LoadingPage from '../LoadingPage';
 import { fetchAllCategory } from '../../redux/action/category/category';
 import Banner from '../../components/Banner';
 import { Helmet } from 'react-helmet-async';
+import { fetchOrderFromUserId } from '../../redux/action/order';
+import { CheckLoginContext } from '../../contexts/LoginContext';
 
 function HomePage() {
   const [dataVideo, setDataVideo] = useState();
@@ -19,9 +21,12 @@ function HomePage() {
 
   const dispatch = useDispatch();
 
+  const { userInfo } = useContext(CheckLoginContext);
+
   const category = useSelector((state) => state.categorySlice);
   const movies = useSelector((state) => state.moviesSlice);
   const series = useSelector((state) => state.seriesSlice);
+  const order = useSelector((state) => state.orderSlice);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -37,6 +42,7 @@ function HomePage() {
       dispatch(fetchSeriesFeature()),
       dispatch(fetchAllCategory()),
       fetchMovies(),
+      dispatch(fetchOrderFromUserId(userInfo.userId)),
     ]);
   }, [dispatch]);
 
@@ -61,7 +67,7 @@ function HomePage() {
     }
   }, [dataVideo, category]);
 
-  if (!dataVideo || !data) {
+  if (!dataVideo || !data || !order) {
     return <LoadingPage />;
   }
   return (
@@ -71,7 +77,12 @@ function HomePage() {
         <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
         <link rel="icon" href={process.env.REACT_APP_IMAGE_BANNER} />
       </Helmet>
-      <Banner dataVideo={dataVideo} isLoading={isLoading} data={data} />
+      <Banner
+        dataVideo={dataVideo}
+        isLoading={isLoading}
+        data={data}
+        order={order}
+      />
       {movies && series ? (
         <>
           <Content

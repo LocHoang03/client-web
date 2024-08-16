@@ -18,10 +18,12 @@ import {
   LeftOutlined,
   RightOutlined,
 } from '@ant-design/icons';
-import { Carousel, Tag } from 'antd';
+import { Carousel, Modal, Tag } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-function Banner({ dataVideo, isLoading, data, type }) {
+const { confirm } = Modal;
+
+function Banner({ dataVideo, isLoading, data, type, order }) {
   const carouselRef = useRef(null);
   const videoRef = useRef([]);
   const [currentId, setCurrentId] = useState(0);
@@ -38,12 +40,33 @@ function Banner({ dataVideo, isLoading, data, type }) {
     setCurrentId(current);
     setCurrentSlide(current);
   };
-
   const handleWatchNow = (filmId) => {
-    if (type !== 'series') {
-      navigate('/film/watching-movies/' + filmId);
-    } else {
-      navigate('/watching-series/' + filmId + '/' + 1);
+    if (dataVideo && order?.data[0]?.packageId) {
+      for (let i = 0; i < dataVideo.length; i++) {
+        if (dataVideo[i]._id === filmId) {
+          const packageId = order.data[0].packageId._id;
+          const listPackageIds = dataVideo[i].listPackageIdBand;
+          if (listPackageIds.includes(packageId)) {
+            confirm({
+              title: 'Operation failed!!',
+              content: `Your service package cannot watch this movie, please upgrade to a higher service 
+          package to be able to watch this movie. Have you recently upgraded your current package?`,
+              okText: 'Yes',
+              cancelText: 'No',
+              onOk() {
+                navigate('/package-upgrade');
+              },
+              onCancel() {},
+            });
+          } else {
+            if (type !== 'series') {
+              navigate('/film/watching-movies/' + filmId);
+            } else {
+              navigate('/watching-series/' + filmId + '/' + 1);
+            }
+          }
+        }
+      }
     }
   };
 

@@ -15,7 +15,7 @@ import {
   DivInfo,
 } from './styles';
 import { SearchOutlined } from '@ant-design/icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllMovies } from '../../redux/action/home/movies';
 import { fetchAllSeries } from '../../redux/action/home/series';
@@ -77,7 +77,9 @@ function InputSearchLayout(props) {
     setOnFocus(true);
   };
   const handleBlurInput = () => {
-    setOnFocus(false);
+    setTimeout(() => {
+      setOnFocus(false);
+    }, 100);
   };
 
   const handleOnchangeInput = async (e) => {
@@ -89,7 +91,7 @@ function InputSearchLayout(props) {
     event.stopPropagation();
   };
 
-  const handleClickFilm = (type, filmId) => {
+  const handleClickFilm = (e, type, filmId) => {
     if (type === 'movies') {
       navigate('/film/' + filmId);
     } else {
@@ -120,7 +122,9 @@ function InputSearchLayout(props) {
                 return (
                   <Item key={id}>
                     <button
-                      onClick={() => handleClickFilm(item.type, item.data._id)}>
+                      onClick={(e) =>
+                        handleClickFilm(e, item.type, item.data._id)
+                      }>
                       <RowItem>
                         <ColItem span={5}>
                           <ImageItem

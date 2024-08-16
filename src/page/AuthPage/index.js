@@ -65,7 +65,7 @@ function AuthPage() {
       success();
       setTimeout(() => {
         navigate('/');
-      }, 200);
+      }, 1000);
     } else {
       error();
     }

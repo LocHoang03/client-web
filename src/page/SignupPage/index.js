@@ -41,7 +41,7 @@ function SignupPage() {
     messageApi.open({
       type: 'success',
       content: 'Successful registration, password will be sent to your email.',
-      duration: 2,
+      duration: 1.5,
     });
   };
 
@@ -65,7 +65,7 @@ function SignupPage() {
       success();
       setTimeout(() => {
         navigate('/auth/login');
-      }, 200);
+      }, 1000);
     } else {
       setTextError(responseJson.message);
     }
