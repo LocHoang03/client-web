@@ -102,7 +102,7 @@ const SeriesPage = () => {
     <DivFilm>
       <Helmet>
         <title>Series Showhub</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <Banner
         dataVideo={dataVideo}

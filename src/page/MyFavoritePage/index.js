@@ -70,7 +70,7 @@ const MyFavoritePage = () => {
     <DivFilm>
       <Helmet>
         <title>Favorite Film</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <DivContent>
         <Title>Your favorite movie and series list</Title>

@@ -68,7 +68,7 @@ function HomePage() {
     <DivHomePage>
       <Helmet>
         <title>Home</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
         <link rel="icon" href={process.env.REACT_APP_IMAGE_BANNER} />
       </Helmet>
       <Banner dataVideo={dataVideo} isLoading={isLoading} data={data} />

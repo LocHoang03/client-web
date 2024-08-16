@@ -196,7 +196,7 @@ const DetailFilmPage = (props) => {
     <DivContainer>
       <Helmet>
         <title>Detail Film </title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <RowDetail>
         <ColDetail span={17} lg={16}>

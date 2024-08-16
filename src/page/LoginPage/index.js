@@ -78,7 +78,7 @@ function LoginPage() {
     <DivAuth>
       <Helmet>
         <title>Login Showhub</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       {contextHolder}
       <DivContainer>

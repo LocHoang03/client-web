@@ -6,7 +6,7 @@ function LoadingPage() {
     <div className="loading-component">
       <Helmet>
         <title>Loading</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <div>
         <Spin tip="Loading" size="large">

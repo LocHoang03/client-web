@@ -101,7 +101,7 @@ function PaymentPage(props) {
     <PaymentContainer>
       <Helmet>
         <title>Payment</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       {!props.login && (
         <PaymentHeader>

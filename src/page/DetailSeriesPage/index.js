@@ -228,7 +228,7 @@ const DetailSeriesPage = (props) => {
     <DivContainer>
       <Helmet>
         <title>Detail Series </title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <RowDetail>
         <ColDetail span={17} lg={16}>

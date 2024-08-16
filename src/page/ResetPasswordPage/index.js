@@ -94,7 +94,7 @@ function ResetPasswordPage() {
     <DivAuth>
       <Helmet>
         <title>Reset Password</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       {contextHolder}
       <DivContainer>

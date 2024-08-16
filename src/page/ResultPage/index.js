@@ -140,7 +140,7 @@ const ResultPage = (props) => {
     <DivFilm>
       <Helmet>
         <title>Result Film</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <DivContent>
         <Title>
