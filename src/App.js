@@ -33,7 +33,7 @@ import AuthPage from './page/AuthPage';
 import { API_CREATE_MESSAGE } from './configs/apis';
 import FooterMobile from './components/FooterMobile';
 
-const newSocket = io('http://localhost:4000/user');
+const newSocket = io(`${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user`);
 
 function App() {
   const [isModal, setIsModal] = useState(false);
