@@ -61,28 +61,28 @@ function LandingPage() {
       </DivActionAuth>
       <DivInformation>
         <RowInformation>
-          <ColInformation span={12} xs={24}>
+          <ColInformation span={12} md={12} xs={24}>
             <TitleInformation>Enjoy on your TV</TitleInformation>
             <TextInformation>
               Watch on smart TVs, Playstation, Xbox, Chromecast, Apple TV,
               Blu-ray players and more.
             </TextInformation>
           </ColInformation>
-          <ColInformation span={12} xs={24}>
+          <ColInformation span={12} md={12} xs={24}>
             <ImageInformation src={imageInfo1} />
           </ColInformation>
         </RowInformation>
       </DivInformation>
       <DivInformation>
         <RowInformation>
-          <ColInformation span={12} xs={24}>
+          <ColInformation span={12} md={12} xs={24}>
             <TitleInformation>Watch everywhere</TitleInformation>
             <TextInformation>
               Stream unlimited movies and TV shows on your phone, tablet, laptop
               and TV.
             </TextInformation>
           </ColInformation>
-          <ColInformation span={12} xs={24}>
+          <ColInformation span={12} md={12} xs={24}>
             <ImageInformation src={imageInfo2} />
           </ColInformation>
         </RowInformation>

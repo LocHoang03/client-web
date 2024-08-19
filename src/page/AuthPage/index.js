@@ -150,7 +150,7 @@ function AuthPage() {
                   <p>Submit your request later {count}</p>
                 ) : (
                   <p>
-                    Haven't received the code?
+                    Haven't received the code?&nbsp;
                     <button onClick={handleSetSendRequest}>
                       Request resend
                     </button>
