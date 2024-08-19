@@ -109,7 +109,8 @@ function AuthPage() {
           <DivInformation>
             <Title>Two-factor authentication</Title>
             <Text>
-              Open your authentication app and enter the code for DigitalOcean.
+              Open gmail and view your authentication gmail and enter the code
+              for Showhub.
             </Text>
             <DivDetail>
               <Form
