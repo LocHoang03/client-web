@@ -32,6 +32,7 @@ import ResetPasswordPage from './page/ResetPasswordPage';
 import AuthPage from './page/AuthPage';
 import { API_CREATE_MESSAGE } from './configs/apis';
 import FooterMobile from './components/FooterMobile';
+import LoginSuccessPage from './page/LoginSuccessPage';
 
 const newSocket = io(`${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user`);
 
@@ -57,6 +58,7 @@ function App() {
   useEffect(() => {
     Promise.all([dispatch(fetchAllMovies()), dispatch(fetchAllSeries())]);
   }, [dispatch]);
+  console.log(pathname);
 
   useEffect(() => {
     let check = false;
@@ -201,7 +203,8 @@ function App() {
   }
   return (
     <div className="App">
-      {isLogin !== 0 && isLogin !== -1 && (
+      {((isLogin !== 0 && isLogin !== -1) ||
+        pathname.startsWith('/login-success/')) && (
         <>
           <ModalCustomerSupport
             isModal={isModal}
@@ -275,6 +278,7 @@ function App() {
       ) : (
         <Routes>
           <Route path="/auth/signup" element={<SignupPage />} />
+          <Route path="/login-success/:userId" element={<LoginSuccessPage />} />
           <Route path="/auth/login" element={<LoginPage />} />
           <Route
             path="/auth/reset-password/:token"

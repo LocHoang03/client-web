@@ -219,8 +219,11 @@ function ProfilePage() {
                 </DivUpload>
                 <DivInfo>
                   <Text>Email: {user.email}</Text>
-                  <Text>Phone Number: {user.phoneNumber}</Text>
-                  <Text>Gender: {user.sex}</Text>
+                  <Text>
+                    Phone Number:{' '}
+                    {user.phoneNumber ? user.phoneNumber : 'Not updated yet'}
+                  </Text>
+                  <Text>Gender: {user.sex ? user.sex : 'Not updated yet'}</Text>
                 </DivInfo>
               </DivContentLeft>
             </ColLeft>

@@ -13,7 +13,7 @@ export const DivAuth = styled.div`
 export const DivContainer = styled.div`
   width: 100%;
   max-width: 1200px;
-  margin: 3% auto 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,9 +38,14 @@ export const TextContent = styled.p`
 `;
 export const DivForm = styled.div`
   background: var(--bg-form);
-  margin: 20px 0 60px;
+  margin: 20px 0 0;
   padding: 40px 0;
   border-radius: 20px;
+
+  & > div {
+    width: 80%;
+    margin: 0 auto;
+  }
   & form {
     width: 80%;
     margin: 0 auto;
@@ -106,7 +111,7 @@ export const TextBanner = styled.h2`
 
 export const DivLink = styled.div`
   display: flex;
-  margin-top: 14px;
+
   justify-content: space-between;
   @media (max-width: 575px) {
     flex-direction: column !important;
@@ -127,6 +132,64 @@ export const Text = styled.p`
     &:hover {
       color: var(--hover-text-action);
     }
+  }
+`;
+export const DivLoginOther = styled.div``;
+
+export const DivText = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+  & > div:nth-child(2) {
+    padding: 0 10px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  & > div:first-child {
+    background-color: #dbdbdb;
+    flex: 1;
+    height: 1px;
+    width: 100%;
+  }
+
+  & > div:last-child {
+    background-color: #dbdbdb;
+    flex: 1;
+    height: 1px;
+    width: 100%;
+  }
+`;
+
+export const DivLoginButton = styled.div`
+  text-align: center;
+  & > button {
+    margin: 10px auto 20px;
+    border-radius: 3px;
+    width: 150px;
+    background-color: var(--white-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    & > span {
+      margin-left: 6px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+  & img {
+    height: 30px;
+    width: 30px;
+  }
+
+  & button:hover {
+    background-color: rgba(255, 255, 255, 0.85);
   }
 `;
 

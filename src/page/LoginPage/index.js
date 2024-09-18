@@ -10,13 +10,17 @@ import {
   DivLink,
   TextContent,
   DivError,
+  DivLoginOther,
+  DivText,
+  DivLoginButton,
 } from './styles';
 import ItemForm from '../../components/Common/ItemForm';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form, Input, message } from 'antd';
 import LogoImage from '../../components/Common/ImageBanner';
-import { API_LOGIN } from '../../configs/apis';
+import { API_GET_LOGIN_GOOGLE, API_LOGIN } from '../../configs/apis';
 import { Helmet } from 'react-helmet-async';
+import imageGoogle from '../../assets/images/logo-google.jpg';
 
 function LoginPage() {
   const [textError, setTextError] = useState();
@@ -74,6 +78,11 @@ function LoginPage() {
     setTextError();
   };
 
+  const handleLoginGoogle = async () => {
+    window.location.href =
+      process.env.REACT_APP_PUBLIC_HOST_BACKEND + '/api/auth/google';
+  };
+
   return (
     <DivAuth>
       <Helmet>
@@ -123,15 +132,28 @@ function LoginPage() {
                 <Button htmlType="submit">Sign in</Button>
               </Form.Item>
               <DivError>{textError}</DivError>
-              <DivLink>
-                <Text>
-                  New to ShowHub? <Link to="/auth/signup">Sign up</Link>
-                </Text>
-                <Text>
-                  <Link to="/auth/forgot-password">Forgot password ?</Link>
-                </Text>
-              </DivLink>
             </Form>
+            <DivLoginOther>
+              <DivText>
+                <div></div>
+                <div>OR</div>
+                <div></div>
+              </DivText>
+              <DivLoginButton>
+                <button onClick={handleLoginGoogle}>
+                  <img src={imageGoogle} alt="logo-google" />{' '}
+                  <span>Google</span>
+                </button>
+              </DivLoginButton>
+            </DivLoginOther>
+            <DivLink>
+              <Text>
+                New to ShowHub? <Link to="/auth/signup">Sign up</Link>
+              </Text>
+              <Text>
+                <Link to="/auth/forgot-password">Forgot password ?</Link>
+              </Text>
+            </DivLink>
           </DivForm>
         </DivContent>
       </DivContainer>

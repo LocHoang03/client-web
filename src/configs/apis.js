@@ -1,6 +1,7 @@
 export const API_FETCH_ALL_COMMON_QUESTIONS = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/common-questions`;
 
 export const API_LOGIN = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user/auth/login`;
+export const API_LOGIN_AUTHENTICATION = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user/auth/login-authentication`;
 export const API_VERIFY_LOGIN = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user/auth/verify-login`;
 export const API_LOGOUT = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user/auth/logout`;
 export const API_SIGNUP = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user/auth/signup`;
@@ -72,3 +73,5 @@ export const API_GET_NEW_SERIES = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/
 export const API_GET_ORDER_FROM_USER_ID = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/order/get-order`;
 
 export const API_GET_ALL_COUNTRY = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/country`;
+
+export const API_GET_LOGIN_GOOGLE = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/api/auth/google/`;
