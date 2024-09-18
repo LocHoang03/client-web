@@ -35,10 +35,12 @@ import FooterMobile from './components/FooterMobile';
 import LoginSuccessPage from './page/LoginSuccessPage';
 
 const newSocket = io(`${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user`);
+const newSocketAdmin = io(`${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/admin`);
 
 function App() {
   const [isModal, setIsModal] = useState(false);
   const [socket, setSocket] = useState();
+  const [socketAdmin, setSocketAdmin] = useState();
   const [isState, setIsState] = useState(0);
   const [message, setMessage] = useState([]);
   const [roomId, setRoomId] = useState();
@@ -58,7 +60,6 @@ function App() {
   useEffect(() => {
     Promise.all([dispatch(fetchAllMovies()), dispatch(fetchAllSeries())]);
   }, [dispatch]);
-  console.log(pathname);
 
   useEffect(() => {
     let check = false;
@@ -173,9 +174,10 @@ function App() {
   useEffect(() => {
     if (isState === 2) {
       setSocket(newSocket);
+      setSocketAdmin(newSocketAdmin);
 
-      newSocket.on('chatCustomer', (data) => {
-        console.log(data);
+      newSocket.on('receiveChatCustomer', (data) => {
+        console.log('data chat', data);
         setMessage((prev) => [...prev, data]);
         scrollToBottom();
       });
@@ -189,7 +191,7 @@ function App() {
         setImagePreview();
       });
       return () => {
-        newSocket.off('chatCustomer');
+        newSocket.off('receiveChatCustomer');
       };
     }
   }, [isState, message]);
@@ -213,7 +215,9 @@ function App() {
             isState={isState}
             setIsState={setIsState}
             socket={socket}
+            socketAdmin={socketAdmin}
             socketConnect={newSocket}
+            socketConnectAdmin={newSocketAdmin}
             handleChatCustomer={handleChatCustomer}
             setMessage={setMessage}
             message={message}

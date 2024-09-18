@@ -57,6 +57,7 @@ function ModalCustomerSupport({
   isState,
   setIsState,
   socket,
+  socketAdmin,
   handleChatCustomer,
   setMessage,
   message,
@@ -69,6 +70,7 @@ function ModalCustomerSupport({
   setFile,
   file,
   socketConnect,
+  socketConnectAdmin,
 }) {
   const [input, setInput] = useState('');
   const [openEmoji, setOpenEmoji] = useState(false);
@@ -165,7 +167,7 @@ function ModalCustomerSupport({
       setMessage((prev) => [...prev, data]);
       scrollToBottom();
 
-      socket.emit('chatCustomer', { roomId: roomId, data: data });
+      socket.emit('chatCustomerAdmin', { roomId: roomId, data: data });
 
       await fetch(API_UPDATE_MESSAGE + '/' + roomId, {
         method: 'PATCH',
@@ -213,7 +215,11 @@ function ModalCustomerSupport({
         file: json.data.messages[json.data.messages.length - 1].file,
         time: json.data.messages[json.data.messages.length - 1].time,
       };
-      socket.emit('chatCustomer', { roomId: roomId, data: dataMessage });
+
+      socketAdmin.emit('chatCustomer', {
+        roomId: roomId,
+        data: dataMessage,
+      });
     }
     socket.off('chatCustomer');
     setInput('');

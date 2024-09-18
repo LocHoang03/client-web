@@ -26,7 +26,6 @@ function LoginSuccessPage() {
         },
       });
       const responseJson = await response.json();
-      console.log(responseJson);
       if (responseJson.isBanned) {
         setIsLogin(true);
       } else {
@@ -39,7 +38,7 @@ function LoginSuccessPage() {
       }
     };
     loginAuthentication();
-  }, [isLogin, userId]);
+  }, [userId]);
 
   return (
     <>
