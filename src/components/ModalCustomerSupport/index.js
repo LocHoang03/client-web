@@ -215,13 +215,8 @@ function ModalCustomerSupport({
         file: json.data.messages[json.data.messages.length - 1].file,
         time: json.data.messages[json.data.messages.length - 1].time,
       };
-
-      socketAdmin.emit('chatCustomer', {
-        roomId: roomId,
-        data: dataMessage,
-      });
+      socket.emit('chatCustomerAdmin', { roomId: roomId, data: dataMessage });
     }
-    socket.off('chatCustomer');
     setInput('');
     setFile();
     scrollToBottom();

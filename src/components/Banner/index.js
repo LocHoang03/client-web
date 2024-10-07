@@ -28,6 +28,7 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
   const videoRef = useRef([]);
   const [currentId, setCurrentId] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loading, setLoading] = useState(Array(dataVideo.length).fill(true));
 
   const navigate = useNavigate();
 
@@ -78,6 +79,12 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
     }
   };
 
+  const handleVideoLoad = (index) => {
+    const newLoading = [...loading];
+    newLoading[index] = false;
+    setLoading(newLoading);
+  };
+
   return (
     <DivBanner className="container-data-slider">
       <Carousel
@@ -89,21 +96,28 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
         afterChange={handleAfterChange}
         style={{ width: '100%' }}>
         {dataVideo &&
-          dataVideo.map((item, id) => {
-            return (
-              <Fragment key={id}>
+          dataVideo.map((item, id) => (
+            <Fragment key={id}>
+              <div className="video-container">
+                {loading[id] && (
+                  <div className="loading-container">
+                    <div className="loading-wave"></div>
+                  </div>
+                )}
                 <video
                   ref={(el) => (videoRef.current[id] = el)}
                   muted
                   loop
                   autoPlay
                   className="video-player"
-                  key={id}>
+                  preload="auto"
+                  key={id}
+                  onLoadedData={() => handleVideoLoad(id)}>
                   <source src={item.videoUrl.url} type="video/mp4" />
                 </video>
-              </Fragment>
-            );
-          })}
+              </div>
+            </Fragment>
+          ))}
       </Carousel>
       <DivInfo>
         <LeftInfo>
