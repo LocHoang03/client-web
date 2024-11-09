@@ -23,136 +23,144 @@ function TermAndConditionPage() {
       <Content>
         <DivContent>
           <Text>
-            Please read this page carefully as it sets out the terms that apply
-            to your use of the Website, and any part of their content and all
-            materials appearing on them. By using the Website you confirm that
-            you accept these Terms of Use and you agree to comply with them. If
-            you do not agree to these Terms of Use, please refrain from using
-            the Website.
+            Vui lòng đọc kỹ trang này vì nó đưa ra các điều khoản áp dụng đối
+            với việc bạn sử dụng Trang web cũng như bất kỳ phần nào trong nội
+            dung của chúng và tất cả vật liệu xuất hiện trên chúng. Bằng cách sử
+            dụng Trang web, bạn xác nhận rằng bạn chấp nhận các Điều khoản sử
+            dụng này và bạn đồng ý tuân thủ chúng. Nếu như bạn không đồng ý với
+            các Điều khoản sử dụng này, vui lòng không sử dụng Trang web.
           </Text>
-          <Title>YOUR USE OF THE WEBSITE IF YOU ARE UNDER 18</Title>
+          <Title>VIỆC SỬ DỤNG TRANG WEB CỦA BẠN NẾU BẠN DƯỚI 18 TUỔI</Title>
           <Text>
-            If you are under 18, you may need your parent/guardian to help you
-            with your use of the Website and with reading these Terms and
-            Conditions. If anything is hard to understand, please ask you
-            parent/guardian to explain. If you still have any questions, you or
-            your parent/guardian can contact us at: [
+            Nếu bạn dưới 18 tuổi, bạn có thể cần cha mẹ/người giám hộ giúp đỡ
+            bạn với việc bạn sử dụng Trang web cũng như với việc đọc các Điều
+            khoản và Điều kiện. Có gì khó hiểu cứ hỏi bạn nhé cha mẹ/người giám
+            hộ để giải thích. Nếu bạn vẫn còn thắc mắc, bạn hoặc cha mẹ/người
+            giám hộ của bạn có thể liên hệ với chúng tôi tại: [
             <a href="mailto:hoangphuocloc.phurieng@gmail.com">
               hoangphuocloc.phurieng@gmail.com
             </a>
             ].
           </Text>
           <Text>
-            If you are aged 13 or under, you cannot register for a ShowHub
-            account (“Account”) without the permission of your parent/guardian.
-            You need to register if you want to play the Fantasy game. You do
-            not need to register to use the Website.
+            Nếu bạn từ 13 tuổi trở xuống, bạn không thể đăng ký ShowHub tài
+            khoản (“Tài khoản”) mà không có sự cho phép của phụ huynh/người giám
+            hộ của bạn. Bạn cần phải đăng ký nếu muốn chơi game Fantasy. bạn làm
+            không cần phải đăng ký để sử dụng Trang web.
           </Text>
           <Text>
-            We may collect your personal information when you use the Website
-            and the App. You can find out more about how we use your personal
-            information in our Questions and Answers.
+            Chúng tôi có thể thu thập thông tin cá nhân của bạn khi bạn sử dụng
+            Trang web và Ứng dụng. Bạn có thể tìm hiểu thêm về cách chúng tôi sử
+            dụng thông tin cá nhân của bạn thông tin trong Câu hỏi và Trả lời
+            của chúng tôi.
           </Text>
-          <Title>OTHER APPLICABLE TERMS</Title>
+          <Title>ĐIỀU KHOẢN ÁP DỤNG KHÁC</Title>
           <Text>
-            These Terms of Use are additional to, and should be read in
-            conjunction with, our Privacy Policy and Cookie Policy.
-          </Text>
-          <Text>
-            If you are under 18, we have tried to explain these policies for you
-            in our Questions and Answers. You can find a link here:{' '}
-            <a href="/contact">link</a>.
-          </Text>
-          <Title>CHANGES TO THESE TERMS OF USE</Title>
-          <Text>
-            We may change these terms at any time by amending this page. Please
-            check this page regularly to take notice of any such changes as you
-            will be deemed to accept them through your continued use of the
-            Website.
-          </Text>
-          <Title>CHANGES TO THE WEBSITE</Title>
-          <Text>
-            We aim to update the Website regularly, and may change the content
-            at any time. If the need arises, we may suspend access to the
-            Website, or close it indefinitely. We will not be liable if for any
-            reason the Website is unavailable at any time or for any period. Any
-            of the material on the Website may be out of date at any given time,
-            and we are under no obligation to update such material.
-          </Text>
-          <Title>ACCOUNT</Title>
-          <Text>
-            You may register for an Account. You are not permitted to register
-            multiple Accounts on the Website.
+            Các Điều khoản sử dụng này là bổ sung và nên được đọc trong kết hợp
+            với Chính sách quyền riêng tư và Chính sách cookie của chúng tôi.
           </Text>
           <Text>
-            In registering for an Account, you will be providing personal data
-            to the ShowHub. Any personal data which you do submit will be
-            processed in accordance with the ShowHub’s Privacy Policy and in
-            accordance with relevant data protection legislation including the
-            General Data Protection Regulation (“GDPR”) and the Data Protection
-            Act 2018. If you are under 18, you can find out more about how we
-            use your personal information in our Questions and Answers, which is
-            available here: <a href="/contact">link</a>.
+            Nếu bạn dưới 18 tuổi, chúng tôi đã cố gắng giải thích những chính
+            sách này cho bạn trong Câu hỏi và Trả lời của chúng tôi. Bạn có thể
+            tìm thấy một liên kết ở đây: <a href="/contact">liên kết</a>.
           </Text>
-          <Title>EXTERNAL LINKS</Title>
+          <Title>THAY ĐỔI ĐỐI VỚI ĐIỀU KHOẢN SỬ DỤNG NÀY</Title>
           <Text>
-            The Website contains links to other websites and services operated
-            by parties independent to the us. We take reasonable precautions in
-            selecting these however we do not endorse or take responsibility for
-            the content or availability of these websites and cannot accept any
-            liability for any material contained within them or for your use of
-            them or any use of your personal data collected by their operators.
-            If you decide to access linked websites you do so at your own risk
-            and we encourage you to read the privacy statements applicable to
-            each specific website.
+            Chúng tôi có thể thay đổi các điều khoản này bất cứ lúc nào bằng
+            cách sửa đổi trang này. Vui lòng kiểm tra trang này thường xuyên để
+            nhận được thông báo về bất kỳ thay đổi nào như bạn sẽ được coi là
+            chấp nhận chúng thông qua việc bạn tiếp tục sử dụng Trang web.
+          </Text>
+          <Title>THAY ĐỔI TRANG WEB</Title>
+          <Text>
+            Chúng tôi mong muốn cập nhật Trang web thường xuyên và có thể thay
+            đổi nội dung bất cứ lúc nào. Nếu cần thiết, chúng tôi có thể tạm
+            dừng quyền truy cập vào Trang web hoặc đóng nó vô thời hạn. Chúng
+            tôi sẽ không chịu trách nhiệm nếu vì bất kỳ lý do Trang web không
+            khả dụng vào bất kỳ lúc nào hoặc trong bất kỳ khoảng thời gian nào.
+            Bất kì của tài liệu trên Trang web có thể lỗi thời tại bất kỳ thời
+            điểm nào, và chúng tôi không có nghĩa vụ cập nhật tài liệu đó.
+          </Text>
+          <Title>TÀI KHOẢN</Title>
+          <Text>
+            Bạn có thể đăng ký một Tài khoản. Bạn không được phép đăng ký nhiều
+            Tài khoản trên Trang web.
           </Text>
           <Text>
-            If you are under 18, you may need your parent/guardian to help you
-            with your use of the Website and with ensuring the content and
-            availability of any linked websites and services are appropriate.
+            Khi đăng ký Tài khoản, bạn sẽ cung cấp dữ liệu cá nhân đến ShowHub.
+            Bất kỳ dữ liệu cá nhân nào bạn gửi sẽ được được xử lý theo Chính
+            sách quyền riêng tư của ShowHub và trong phù hợp với luật bảo vệ dữ
+            liệu có liên quan bao gồm cả Quy định chung về bảo vệ dữ liệu
+            (“GDPR”) và Bảo vệ dữ liệu Đạo luật 2018. Nếu bạn dưới 18 tuổi, bạn
+            có thể tìm hiểu thêm về cách chúng tôi sử dụng thông tin cá nhân của
+            bạn trong Câu hỏi và Trả lời của chúng tôi, đó là có sẵn ở đây:{' '}
+            <a href="/contact">liên kết</a>.
           </Text>
-          <Title>VIRUSES</Title>
+          <Title>LIÊN KẾT NGOÀI</Title>
           <Text>
-            We and our suppliers take reasonable precautions to prevent computer
-            viruses, trojan horses, worms, time bombs, cancelbots, corrupted
-            files, or any other items that may damage the operation of computers
-            or property or otherwise engage in computer misuse ("Malicious
-            Programmes") on the Website but cannot accept any liability for
-            them. You are advised to take precautions against such Malicious
-            Programmes, including the use of suitable protective software.
+            Trang web chứa các liên kết đến các trang web và dịch vụ khác được
+            vận hành bởi các bên độc lập với chúng tôi. Chúng tôi thực hiện các
+            biện pháp phòng ngừa hợp lý trong chọn những điều này tuy nhiên
+            chúng tôi không xác nhận hoặc chịu trách nhiệm về nội dung hoặc tính
+            khả dụng của các trang web này và không thể chấp nhận bất kỳ trách
+            nhiệm pháp lý đối với bất kỳ tài liệu nào có trong đó hoặc đối với
+            việc bạn sử dụng họ hoặc bất kỳ việc sử dụng dữ liệu cá nhân nào của
+            bạn do nhà điều hành của họ thu thập. Nếu bạn quyết định truy cập
+            các trang web được liên kết, bạn sẽ tự chịu rủi ro khi làm như vậy
+            và chúng tôi khuyến khích bạn đọc các điều khoản về quyền riêng tư
+            áp dụng cho từng trang web cụ thể.
           </Text>
-          <Title>YOUR LAWFUL USE OF THE WEBSITE</Title>
           <Text>
-            You must not misuse the Website by knowingly introducing Malicious
-            Programmes. You must not attempt to gain unauthorised access to the
-            Website, the server on which the Website is stored or any server,
-            computer or database connected to the Website. You must not attack
-            the Website via a denial-of-service attack or a distributed
-            denial-of-service attack. By breaching this provision, you would
-            commit a criminal offence under the Computer Misuse Act 1990. We
-            will report any such breach to the relevant law enforcement
-            authorities and will co-operate with those authorities by disclosing
-            your identity to them. In the event of such a breach, your right to
-            use the Website will cease immediately.
+            Nếu bạn dưới 18 tuổi, bạn có thể cần cha mẹ/người giám hộ giúp đỡ
+            bạn với việc bạn sử dụng Trang web và với việc đảm bảo nội dung và
+            tính sẵn có của bất kỳ trang web và dịch vụ được liên kết nào đều
+            phù hợp.
           </Text>
-          <Title>LIMITATION OF LIABILITY</Title>
+          <Title>VI-RÚT</Title>
           <Text>
-            Except in the case of death or personal injury caused by our
-            negligence or any wilful act, to the fullest extent permitted by law
-            we exclude all liability to you in respect of your Account and your
-            use of the Website.
+            Chúng tôi và các nhà cung cấp của chúng tôi thực hiện các biện pháp
+            phòng ngừa hợp lý để ngăn chặn việc máy tính virus, trojan, sâu, bom
+            hẹn giờ, cancelbots, bị hỏng tập tin hoặc bất kỳ mục nào khác có thể
+            làm hỏng hoạt động của máy tính hoặc tài sản hoặc tham gia vào việc
+            lạm dụng máy tính ("Độc hại Programs") trên Trang web nhưng không
+            thể chấp nhận bất kỳ trách nhiệm pháp lý nào đối với họ. Bạn nên đề
+            phòng những hành vi độc hại như vậy Các chương trình, bao gồm cả
+            việc sử dụng phần mềm bảo vệ phù hợp.
           </Text>
-          <Title>GOVERNING LAW</Title>
+          <Title>BẠN SỬ DỤNG TRANG WEB HỢP PHÁP</Title>
           <Text>
-            These Terms of Use are governed by and interpreted in accordance
-            with the laws of England and Wales. Any disputes arising under or in
-            connection with these terms shall be subject to the non-exclusive
-            jurisdiction of the English courts.
+            Bạn không được lạm dụng Trang web bằng cách cố ý giới thiệu Nội dung
+            độc hại Chương trình. Bạn không được cố gắng truy cập trái phép vào
+            Trang web, máy chủ lưu trữ Trang web hoặc bất kỳ máy chủ nào, máy
+            tính hoặc cơ sở dữ liệu được kết nối với Trang web. Bạn không được
+            tấn công Trang web thông qua một cuộc tấn công từ chối dịch vụ hoặc
+            một cuộc tấn công phân tán tấn công từ chối dịch vụ. Bằng việc vi
+            phạm điều khoản này, bạn sẽ phạm tội hình sự theo Đạo luật lạm dụng
+            máy tính năm 1990. Chúng tôi sẽ báo cáo bất kỳ vi phạm nào như vậy
+            cho cơ quan thực thi pháp luật có liên quan cơ quan có thẩm quyền và
+            sẽ hợp tác với các cơ quan đó bằng cách tiết lộ danh tính của bạn
+            đối với họ. Trong trường hợp vi phạm như vậy, quyền của bạn được
+            việc sử dụng Trang web sẽ chấm dứt ngay lập tức.
           </Text>
-          <Title>CONTACT</Title>
+          <Title>GIỚI HẠN TRÁCH NHIỆM</Title>
           <Text>
-            If you have any comments or questions about the Website or the App
-            please contact us at{' '}
+            Ngoại trừ trường hợp tử vong hoặc thương tích cá nhân do hành vi của
+            chúng tôi gây ra sơ suất hoặc bất kỳ hành động cố ý nào, trong phạm
+            vi tối đa được pháp luật cho phép chúng tôi loại trừ mọi trách nhiệm
+            pháp lý đối với bạn đối với Tài khoản của bạn và việc sử dụng Trang
+            web.
+          </Text>
+          <Title>LUẬT ĐIỀU CHỈNH</Title>
+          <Text>
+            Các Điều khoản sử dụng này được điều chỉnh và giải thích theo với
+            luật pháp của Anh và xứ Wales. Bất kỳ tranh chấp nào phát sinh dưới
+            hoặc trong việc kết nối với các điều khoản này sẽ phải tuân theo các
+            điều khoản không độc quyền thẩm quyền của tòa án Anh.
+          </Text>
+          <Title>LIÊN HỆ</Title>
+          <Text>
+            Nếu bạn có bất kỳ nhận xét hoặc câu hỏi nào về Trang web hoặc Ứng
+            dụng vui lòng liên hệ với chúng tôi tại{' '}
             <a href="mailto:hoangphuocloc.phurieng@gmail.com">
               hoangphuocloc.phurieng@gmail.com
             </a>

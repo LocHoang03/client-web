@@ -44,7 +44,7 @@ function SearchComponent({ options, options1, options2, type }) {
           <RowLook>
             <ColLook span={6} sm={6} xs={12}>
               <Input
-                placeholder="Search name film"
+                placeholder="Tìm kiếm tên phim"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
               />
@@ -53,7 +53,7 @@ function SearchComponent({ options, options1, options2, type }) {
               <Select
                 showSearch
                 defaultValue=""
-                placeholder="Select category"
+                placeholder="Chọn danh mục"
                 allowClear
                 value={valueCategory}
                 onChange={setValueCategory}
@@ -64,7 +64,7 @@ function SearchComponent({ options, options1, options2, type }) {
               <Select
                 showSearch
                 defaultValue=""
-                placeholder="Select country"
+                placeholder="Chọn quốc gia"
                 allowClear
                 value={valueCountry}
                 onChange={setValueCountry}
@@ -75,7 +75,7 @@ function SearchComponent({ options, options1, options2, type }) {
               <Select
                 showSearch
                 defaultValue=""
-                placeholder="Select year"
+                placeholder="Chọn năm"
                 allowClear
                 value={valueYear}
                 onChange={setValueYear}
@@ -86,7 +86,7 @@ function SearchComponent({ options, options1, options2, type }) {
           <div>
             <ButtonSearch type="submit">
               <SearchOutlined />
-              Search
+              Tìm kiếm
             </ButtonSearch>
           </div>
         </FormLook>

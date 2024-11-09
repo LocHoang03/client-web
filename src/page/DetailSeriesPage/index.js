@@ -171,11 +171,11 @@ const DetailSeriesPage = (props) => {
     } else {
       setIsModalOpen(true);
       confirm({
-        title: 'Operation failed!!',
-        content: `Your service package cannot watch this movie, please upgrade to a higher service 
-        package to be able to watch this movie. Have you recently upgraded your current package?`,
-        okText: 'Yes',
-        cancelText: 'No',
+        title: 'Hoạt động không thành công!!',
+        content: `Gói dịch vụ của bạn không xem được phim này, vui lòng nâng cấp lên dịch vụ cao hơn 
+        gói để có thể xem phim này. Bạn có nâng cấp gói hiện tại của mình không?`,
+        okText: 'Đồng ý',
+        cancelText: 'Từ chối',
         onOk() {
           navigate('/package-upgrade');
         },
@@ -239,7 +239,7 @@ const DetailSeriesPage = (props) => {
                   <ImageFilm src={data?.film?.imageUrl?.url} />
                   <DivWatchButton>
                     <ButtonWatch onClick={handleWatchingMovies}>
-                      Watch a movie
+                      Xem phim
                     </ButtonWatch>
                   </DivWatchButton>
                 </ColLeft>
@@ -247,7 +247,7 @@ const DetailSeriesPage = (props) => {
                   <InfoMovies data={data} />
                 </ColRight>
                 <DivContent>
-                  <TitleContent>Content</TitleContent>
+                  <TitleContent>Nội dung</TitleContent>
                   <TextContent>{data?.film?.description}</TextContent>
                 </DivContent>
               </>
@@ -296,13 +296,13 @@ const DetailSeriesPage = (props) => {
             type="series"
           />
           <FilmMost
-            title={'Most watched movies'}
+            title={'Phim được xem nhiều nhất'}
             film={mostView.data}
             filmId={seriesId}
             type="series"
           />
           <FilmMost
-            title={'Recommended film'}
+            title={'Phim đề xuất'}
             film={mostRating.data}
             filmId={seriesId}
             type="series"

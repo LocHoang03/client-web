@@ -21,6 +21,7 @@ import dayjs from 'dayjs';
 import { API_GET_PACKAGE_PAYMENT } from '../../configs/apis.js';
 import { Helmet } from 'react-helmet-async';
 
+//  thanh toán thành công
 function PaySuccessPage(props) {
   const [dataPaymentSuccess, setDataPaymentSuccess] = useState();
   const [count, setCount] = useState(10);
@@ -28,7 +29,7 @@ function PaySuccessPage(props) {
   const { userInfo, setIsLogin } = useContext(CheckLoginContext);
 
   const navigate = useNavigate();
-
+  // lấy thông tin gói phim người dùng vừa thanh toán
   useEffect(() => {
     const addPayment = async () => {
       const data = {
@@ -93,26 +94,25 @@ function PaySuccessPage(props) {
             <CheckCircleFilled />
           </DivIcon>
           <DivInformation>
-            <Title>Payment successful</Title>
+            <Title>Thanh toán thành công</Title>
             <DivDetail>
               <ListInfoDetail>
                 <ItemDetail>
-                  <p>Transaction id:</p>
+                  <p>Id giao dịch:</p>
                   <p>{dataPaymentSuccess._id}</p>
                 </ItemDetail>
                 <ItemDetail>
-                  <p>Name package:</p>{' '}
-                  <p>{dataPaymentSuccess.packageId.typePack}</p>
+                  <p>Tên gói:</p> <p>{dataPaymentSuccess.packageId.typePack}</p>
                 </ItemDetail>
 
                 <ItemDetail>
-                  <p>Time order:</p>
+                  <p>Thời gian thanh toán:</p>
                   <p>
                     {dayjs(dataPaymentSuccess.createAt).format('DD-MM-YYYY')}
                   </p>
                 </ItemDetail>
                 <ItemDetail>
-                  <p>Expired time:</p>
+                  <p>Ngày hết hạn:</p>
                   <p>
                     {dayjs(dataPaymentSuccess.expirationDate).format(
                       'DD-MM-YYYY',
@@ -120,23 +120,24 @@ function PaySuccessPage(props) {
                   </p>
                 </ItemDetail>
                 <ItemDetail>
-                  <p>Price:</p>
-                  <p>{dataPaymentSuccess.packageId.monthlyPrice} USD/month</p>
+                  <p>Giá:</p>
+                  <p>{dataPaymentSuccess.packageId.monthlyPrice} USD/tháng</p>
                 </ItemDetail>
               </ListInfoDetail>
             </DivDetail>
           </DivInformation>
           <DivThanks>
             <TitleThanks>
-              Thank you for subscribing to our movie package! Wishing you a
-              wonderful entertainment experience.
+              Cảm ơn bạn đã đăng ký gói phim của chúng tôi! Chúc bạn một trải
+              nghiệm giải trí tuyệt vời.
             </TitleThanks>
           </DivThanks>
           <DivRedirect>
             <ButtonRedirect onClick={handleClickHomePage}>
-              Go to home page <ArrowRightOutlined />
+              Tới trang chủ
+              <ArrowRightOutlined />
             </ButtonRedirect>
-            <span>You will be redirected later {count}</span>
+            <span>Bạn sẽ được chuyển hướng sau {count}</span>
           </DivRedirect>
         </PaySuccessContent>
       </PaySuccessContainer>

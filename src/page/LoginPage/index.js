@@ -30,7 +30,7 @@ function LoginPage() {
   const success = () => {
     messageApi.open({
       type: 'success',
-      content: 'Login success.',
+      content: 'Đăng nhập thành công.',
       duration: 1,
     });
   };
@@ -38,11 +38,12 @@ function LoginPage() {
     messageApi.open({
       type: 'error',
       content:
-        'Your account has been locked, please contact customer service for assistance!!',
+        'Tài khoản của bạn đã bị khóa, vui lòng liên hệ bộ phận chăm sóc khách hàng để được hỗ trợ!!',
       duration: 2.5,
     });
   };
 
+  //xác nhận form ktra dữ liệu đăng nhập
   const onFinish = async (values) => {
     setTextError();
     const response = await fetch(API_LOGIN, {
@@ -78,6 +79,7 @@ function LoginPage() {
     setTextError();
   };
 
+  // login bằng google
   const handleLoginGoogle = async () => {
     window.location.href =
       process.env.REACT_APP_PUBLIC_HOST_BACKEND + '/api/auth/google';
@@ -97,7 +99,7 @@ function LoginPage() {
           </TextBanner>
         </DivBanner>
         <DivContent>
-          <TextContent>Sign in to ShowHub</TextContent>
+          <TextContent>Đăng nhập vào ShowHub</TextContent>
           <DivForm>
             <Form
               name="loginForm"
@@ -113,14 +115,14 @@ function LoginPage() {
               <ItemForm
                 label="Email"
                 name="email"
-                message="Please input your email!"
+                message="Vui lòng nhập email của bạn!"
                 input={<Input onFocus={handleFocus} />}
               />
 
               <ItemForm
-                label="Password"
+                label="Mật khẩu"
                 name="password"
-                message="Please input your password!"
+                message="Vui lòng nhập mật khẩu của bạn!"
                 input={<Input.Password onFocus={handleFocus} />}
               />
 
@@ -129,14 +131,14 @@ function LoginPage() {
                 wrapperCol={{
                   span: 24,
                 }}>
-                <Button htmlType="submit">Sign in</Button>
+                <Button htmlType="submit">Đăng nhập</Button>
               </Form.Item>
               <DivError>{textError}</DivError>
             </Form>
             <DivLoginOther>
               <DivText>
                 <div></div>
-                <div>OR</div>
+                <div>HOẶC</div>
                 <div></div>
               </DivText>
               <DivLoginButton>
@@ -148,10 +150,10 @@ function LoginPage() {
             </DivLoginOther>
             <DivLink>
               <Text>
-                New to ShowHub? <Link to="/auth/signup">Sign up</Link>
+                Bạn là người mới? <Link to="/auth/signup">Đăng ký</Link>
               </Text>
               <Text>
-                <Link to="/auth/forgot-password">Forgot password ?</Link>
+                <Link to="/auth/forgot-password">Quên mật khẩu?</Link>
               </Text>
             </DivLink>
           </DivForm>

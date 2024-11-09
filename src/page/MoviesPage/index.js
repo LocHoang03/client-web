@@ -49,6 +49,7 @@ const MoviesPage = (props) => {
 
   useEffect(() => {}, []);
 
+  // lấy danh sách thể loại và các phim theo thể loại
   useEffect(() => {
     if (movies && category) {
       let arrayData = [];
@@ -72,6 +73,7 @@ const MoviesPage = (props) => {
     }
   }, [movies, category]);
 
+  // banner video phía header phim
   useEffect(() => {
     if (dataVideo && category) {
       let arrData = [];

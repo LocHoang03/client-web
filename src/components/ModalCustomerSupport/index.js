@@ -82,6 +82,7 @@ function ModalCustomerSupport({
   const [isLoading, setIsLoading] = useState(true);
   const { userInfo } = useContext(CheckLoginContext);
 
+  //  lấy thông tin phòng chat xem ng dùng trc đó đã ở phòng chat chưa
   useEffect(() => {
     setIsState(undefined);
 
@@ -128,13 +129,14 @@ function ModalCustomerSupport({
     handleChatCustomer();
   };
 
+  // send data chat
+
   const handleSubmitChat = async (e) => {
     setOpenEmoji(false);
     if (!input && !file) {
       return;
     }
 
-    // send data
     const dataForm = new FormData();
     dataForm.append('input', input);
     dataForm.append('userId', userInfo.userId);
@@ -255,6 +257,7 @@ function ModalCustomerSupport({
   const handleClickEmoji = () => {
     setOpenEmoji((prev) => !prev);
   };
+  // biểu tường icon
   const handleAddEmoji = (emojiObject) => {
     setInput((prev) => prev + emojiObject.emoji);
     setOpenEmoji((prev) => !prev);
@@ -300,10 +303,12 @@ function ModalCustomerSupport({
     setDisabled(false);
   };
 
+  /// xóa ảnh
   const handleExitImage = () => {
     setImagePreview();
   };
 
+  //  lấy ảnh để gửi chat
   const handleImageClick = (imageId) => {
     const imgRef = document.getElementById(`image-${imageId}`);
 
@@ -334,16 +339,16 @@ function ModalCustomerSupport({
       {error && (
         <DivError>
           <p>
-            The file only records images in jpg/jpeg/png format or videos in mp4
-            format
+            Tệp chỉ ghi hình ảnh ở định dạng jpg/jpeg/png hoặc video ở định dạng
+            mp4.
           </p>
         </DivError>
       )}
       {visible && (
         <DivInfo>
           <div>
-            <p>This chat session has been ended</p>
-            <ButtonInfo onClick={handleOutRoom}>Oke</ButtonInfo>
+            <p>Phiên trò chuyện này đã kết thúc.</p>
+            <ButtonInfo onClick={handleOutRoom}>Đồng ý</ButtonInfo>
           </div>
         </DivInfo>
       )}
@@ -352,9 +357,13 @@ function ModalCustomerSupport({
           <Title>SHOWHUB</Title>
           {isState === 0 && (
             <DivChat>
-              <p>Welcome to SHOWHUB! Top quality movie viewing website!</p>
+              <p>
+                Chào mừng đến với SHOWHUB! Trang web xem phim chất lượng hàng
+                đầu!
+              </p>
               <button onClick={handleChat}>
-                Chat now <SendOutlined />
+                Trò chuyện ngay bây giờ
+                <SendOutlined />
               </button>
             </DivChat>
           )}
@@ -362,8 +371,8 @@ function ModalCustomerSupport({
       ) : (
         <DivContainerChat>
           <Popconfirm
-            title="Out room chat"
-            description="Are you sure to leave this room?"
+            title="Rời phòng chat"
+            description="Bạn có chắc chắn rời khỏi phòng này không?"
             onConfirm={onConfirm}
             onCancel={onCancel}
             okText="Yes"
@@ -378,9 +387,9 @@ function ModalCustomerSupport({
             <LoadingOutlined className="loading-chat" />
           ) : (
             <DivContentChat>
-              <TitleChat>Live chat with admin {nameAdmin}</TitleChat>
+              <TitleChat>Trò chuyện với quản trị viên {nameAdmin}</TitleChat>
               <ChatContent className="chat-content-scroll">
-                <TextWelcome>Welcome to the chat.</TextWelcome>
+                <TextWelcome>Chào mừng đến với cuộc trò chuyện.</TextWelcome>
                 {message &&
                   message.length > 0 &&
                   message.map((itemMes, id) => {
@@ -407,7 +416,7 @@ function ModalCustomerSupport({
                               <p>
                                 {itemMes.status !== undefined &&
                                 itemMes.status === false
-                                  ? 'Sending'
+                                  ? 'Đang gửi'
                                   : itemMes.time}
                               </p>
                             </>
@@ -420,13 +429,13 @@ function ModalCustomerSupport({
                                       src={itemMes.file.url}
                                       type="video/mp4"
                                     />
-                                    Your browser does not support video.
+                                    Trình duyệt của bạn không hỗ trợ video.
                                   </video>
                                 </DivFile>
                                 <p>
                                   {itemMes.status !== undefined &&
                                   itemMes.status === false
-                                    ? 'Sending'
+                                    ? 'Đang gửi'
                                     : itemMes.time}
                                 </p>
                               </>
@@ -472,7 +481,7 @@ function ModalCustomerSupport({
                                     src={itemMes.file.url}
                                     type="video/mp4"
                                   />
-                                  Your browser does not support video.
+                                  Trình duyệt của bạn không hỗ trợ video.
                                 </video>
                               </DivFile>
                             </>
@@ -486,7 +495,7 @@ function ModalCustomerSupport({
               <FormChat>
                 <input
                   name="search"
-                  placeholder="Enter chat message"
+                  placeholder="Nhập tin nhắn trò chuyện"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                 />

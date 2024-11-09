@@ -90,15 +90,17 @@ const CheckoutFormPage = (() => {
           <DivInfo>
             <DivContent>
               <div>
-                <Title>Order product information</Title>
+                <Title>Thông tin mua hàng</Title>
               </div>
               <DivProductInfo>
                 <ListInfo>
-                  <ItemInfo>Type Package: {data.typePack}</ItemInfo>
-                  <ItemInfo>Resolution: {data.resolution}</ItemInfo>
-                  <ItemInfo>Quality Picture: {data.qualityPicture}</ItemInfo>
-                  <ItemInfo>Monthly Price: {data.monthlyPrice} USD</ItemInfo>
-                  <ItemInfo>Device Support: {data.deviceSupport}</ItemInfo>
+                  <ItemInfo>Loại gói: {data.typePack}</ItemInfo>
+                  <ItemInfo>Độ phân giải: {data.resolution}</ItemInfo>
+                  <ItemInfo>
+                    Chất lượng hình ảnh: {data.qualityPicture}
+                  </ItemInfo>
+                  <ItemInfo>Giá hàng tháng: {data.monthlyPrice} USD</ItemInfo>
+                  <ItemInfo>Thiết bị hỗ trợ: {data.deviceSupport}</ItemInfo>
                 </ListInfo>
               </DivProductInfo>
             </DivContent>

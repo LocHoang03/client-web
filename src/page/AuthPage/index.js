@@ -34,21 +34,25 @@ function AuthPage() {
     return () => clearTimeout(timer);
   }, [count]);
 
+  // thong bao thanh cong
   const success = () => {
     messageApi.open({
       type: 'success',
-      content: 'Confirmed successfully.',
+      content: 'Xác nhận thành công.',
       duration: 1,
     });
   };
+  // thong bao that bai
+
   const error = (msg) => {
     messageApi.open({
       type: 'error',
-      content: msg ? msg : 'Confirmation code is incorrect!!',
+      content: msg ? msg : 'Mã xác nhận không chính xác!!',
       duration: 2.5,
     });
   };
 
+  // xác nhận form
   const onFinish = async (values) => {
     const response = await fetch(API_VERIFY_LOGIN, {
       method: 'POST',
@@ -72,6 +76,8 @@ function AuthPage() {
   };
   const onFinishFailed = (errorInfo) => {};
 
+  //  kiểm tra xem thời gian yêu cầu lại mã xác nhận đủ  60s chưa
+
   const handleSetSendRequest = async () => {
     const data = {
       email: userInfo.email,
@@ -88,7 +94,7 @@ function AuthPage() {
     if (json.success) {
       setCount(60);
     } else {
-      error('Not enough time to request again!!');
+      error('Không đủ thời gian để yêu cầu lại!!');
     }
   };
 
@@ -107,10 +113,9 @@ function AuthPage() {
         </DivHeader>
         <AuthContent>
           <DivInformation>
-            <Title>Two-factor authentication</Title>
+            <Title>Xác thực hai yếu tố</Title>
             <Text>
-              Open gmail and view your authentication gmail and enter the code
-              for Showhub.
+              Mở gmail và xem gmail xác thực của bạn và nhập mã cho ShowHub.
             </Text>
             <DivDetail>
               <Form
@@ -134,26 +139,26 @@ function AuthPage() {
                   rules={[
                     {
                       required: true,
-                      message: 'Please enter the confirmation code!!',
+                      message: 'Vui lòng nhập mã xác nhận!!',
                     },
                   ]}>
-                  <Input placeholder="Enter 6 digit code" />
+                  <Input placeholder="Nhập mã gồm 6 chữ số!!" />
                 </Form.Item>
 
                 <Form.Item label="">
                   <ButtonVerify type="primary" htmlType="submit">
-                    Verify
+                    Xác minh
                   </ButtonVerify>
                 </Form.Item>
               </Form>
               <DivResend>
                 {count > 0 ? (
-                  <p>Submit your request later {count}</p>
+                  <p>Gửi yêu cầu của bạn sau {count}</p>
                 ) : (
                   <p>
-                    Haven't received the code?&nbsp;
+                    Chưa nhận được mã?&nbsp;
                     <button onClick={handleSetSendRequest}>
-                      Request resend
+                      Yêu cầu gửi lại
                     </button>
                   </p>
                 )}

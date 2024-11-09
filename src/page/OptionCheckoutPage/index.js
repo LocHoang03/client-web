@@ -16,7 +16,7 @@ import { useState } from 'react';
 import HeaderPaymentComponent from '../../components/HeaderPaymentComponent';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
+// lựa chọn phương thức thanh toán
 function OptionCheckoutPage(props) {
   const [data, setData] = useState();
 
@@ -44,21 +44,21 @@ function OptionCheckoutPage(props) {
         <DivIconOption>
           <LockOutlined />
         </DivIconOption>
-        <TitleOption>Choose payment method</TitleOption>
+        <TitleOption>Chọn phương thức thanh toán</TitleOption>
         <DivText>
           <div>
-            Your payment process is encrypted and you can change your payment
-            method at any time.
+            Quy trình thanh toán của bạn được mã hóa và bạn có thể thay đổi
+            khoản thanh toán của mình phương pháp bất cứ lúc nào.
           </div>
           <div>
-            <div>Safe for peace of mind.</div>
-            <div>Cancel online easily.</div>
+            <div>An toàn cho sự yên tâm.</div>
+            <div>Hủy trực tuyến dễ dàng.</div>
           </div>
         </DivText>
         <DivActionCheckout>
           <ButtonCheckout onClick={handleClickCheckout}>
             <span>
-              Credit
+              Tín dụng
               <img
                 src="https://res.cloudinary.com/dzxupp48t/image/upload/v1709902109/image-webFilm/di2u3ywiwhwubo7xjqt4.png"
                 alt="credit"

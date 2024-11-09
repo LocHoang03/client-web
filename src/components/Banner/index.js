@@ -41,6 +41,7 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
     setCurrentId(current);
     setCurrentSlide(current);
   };
+  //  xử lý khi người dung muốn xem luôn nếu đủ quyền cho xem ngược lại báo lỗi
   const handleWatchNow = (filmId) => {
     if (dataVideo && order?.data[0]?.packageId) {
       for (let i = 0; i < dataVideo.length; i++) {
@@ -49,11 +50,11 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
           const listPackageIds = dataVideo[i].listPackageIdBand;
           if (listPackageIds.includes(packageId)) {
             confirm({
-              title: 'Operation failed!!',
-              content: `Your service package cannot watch this movie, please upgrade to a higher service 
-          package to be able to watch this movie. Have you recently upgraded your current package?`,
-              okText: 'Yes',
-              cancelText: 'No',
+              title: 'Hoạt động không thành công!!',
+              content: `Gói dịch vụ của bạn không xem được phim này, vui lòng nâng cấp lên dịch vụ cao hơn 
+          gói để có thể xem phim này. Gần đây bạn có nâng cấp gói hiện tại của mình không?`,
+              okText: 'Đồng ý',
+              cancelText: 'Đóng',
               onOk() {
                 navigate('/package-upgrade');
               },
@@ -70,7 +71,7 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
       }
     }
   };
-
+  //xem chi tiết phim
   const handleDetail = (filmId) => {
     if (type !== 'series') {
       navigate('/film/' + filmId);
@@ -79,6 +80,7 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
     }
   };
 
+  //  xử lý load video
   const handleVideoLoad = (index) => {
     const newLoading = [...loading];
     newLoading[index] = false;
@@ -122,10 +124,10 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
       <DivInfo>
         <LeftInfo>
           <Title>
-            Name film: "{data && data.length && data[currentId].name}"
+            Tên phim: "{data && data.length && data[currentId].name}"
           </Title>
           <Category>
-            Category:{' '}
+            Thể loại:{' '}
             {data &&
               data.length &&
               data[currentId].category.map((item, id) => {
@@ -137,14 +139,14 @@ function Banner({ dataVideo, isLoading, data, type, order }) {
               })}
           </Category>
           <Description>
-            Description: {data && data.length && data[currentId].description}
+            Mô tả: {data && data.length && data[currentId].description}
           </Description>
           <DivAction>
             <ButtonWatch onClick={() => handleWatchNow(data[currentId].filmId)}>
-              <CaretRightOutlined /> Watch now
+              <CaretRightOutlined /> Xem ngay
             </ButtonWatch>
             <ButtonDetail onClick={() => handleDetail(data[currentId].filmId)}>
-              <InfoCircleOutlined /> Detail
+              <InfoCircleOutlined /> Chi tiết
             </ButtonDetail>
           </DivAction>
         </LeftInfo>

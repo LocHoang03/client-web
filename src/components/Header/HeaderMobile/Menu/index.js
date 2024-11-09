@@ -28,7 +28,7 @@ function HeaderMenu(props) {
         <ListNav>
           <ItemNav>
             <Link to="/my-profile">
-              <span>My profile</span>
+              <span>Hồ sơ</span>
               <span>
                 <RightOutlined />
               </span>
@@ -36,7 +36,7 @@ function HeaderMenu(props) {
           </ItemNav>
           <ItemNav>
             <Link to="/my-favorite-movies">
-              <span>My favorite movies</span>
+              <span>Danh sách phim yêu thích</span>
               <span>
                 <RightOutlined />
               </span>
@@ -44,7 +44,7 @@ function HeaderMenu(props) {
           </ItemNav>
           <ItemNav>
             <button onClick={handleLogout}>
-              <span>Log out</span>
+              <span>Đăng xuất</span>
               <span>
                 <RightOutlined />
               </span>

@@ -46,3 +46,13 @@ export const ColPage = styled(Col)`
     padding: 0 !important;
   }
 `;
+
+export const DivInfo = styled.div`
+  margin: 20% auto;
+
+  & p {
+    color: var(--white-bg);
+    font-size: 20px;
+    font-weight: 500;
+  }
+`;

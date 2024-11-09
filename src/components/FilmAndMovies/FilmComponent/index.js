@@ -17,7 +17,7 @@ function Film(props) {
       <ImageFilm src={props.image} alt={props.title} />
       <NameFilm>{props.title}</NameFilm>
       <LayoutButton
-        text="Watching"
+        text="Xem phim"
         handleWatching={handleWatching}
         idFilm={props.idFilm}
       />

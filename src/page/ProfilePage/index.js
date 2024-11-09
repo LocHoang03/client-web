@@ -33,7 +33,7 @@ function ProfilePage() {
 
   const openNotification = (placement, message) => {
     notification.error({
-      message: `Notification Error`,
+      message: `Thông báo lỗi`,
       description: message,
       placement,
     });
@@ -58,23 +58,19 @@ function ProfilePage() {
   const [form] = Form.useForm();
   const [options, setOptions] = useState([
     {
-      value: 'male',
-      label: 'Male',
+      value: 'Nam',
+      label: 'Nam',
     },
     {
-      value: 'female',
-      label: 'Female',
-    },
-    {
-      value: 'other',
-      label: 'Other',
+      value: 'Nữ',
+      label: 'Nữ',
     },
   ]);
 
   const [items, setItems] = useState([
     {
       key: 'update',
-      label: 'Update Profile',
+      label: 'Cập nhật hồ sơ',
       children: (
         <FormUpdateProfile
           form={form}
@@ -87,7 +83,7 @@ function ProfilePage() {
     },
     {
       key: 'change',
-      label: 'Change Password',
+      label: 'Đổi mật khẩu',
       children: (
         <FormUpdateProfile
           form={form}
@@ -100,11 +96,12 @@ function ProfilePage() {
     },
     {
       key: 'package',
-      label: 'Package ',
+      label: 'Gói phim',
       children: <InfoPackage />,
     },
   ]);
 
+  // lấy htoong tin người dùng để hiện thị ra giao diện
   useEffect(() => {
     if (userInfo) {
       setUser(userInfo);
@@ -118,6 +115,7 @@ function ProfilePage() {
     }
   }, [userInfo, form]);
 
+  // thay đổi avatar
   const handleChangeAvatarUser = async (info) => {
     setLoading(true);
     if (
@@ -125,7 +123,7 @@ function ProfilePage() {
       info.file.type !== 'image/jpg' &&
       info.file.type !== 'image/png'
     ) {
-      openNotification('top', 'Invalid image type!!');
+      openNotification('top', 'Loại hình ảnh không hợp lệ!!');
       return;
     }
 
@@ -145,10 +143,11 @@ function ProfilePage() {
     }
   };
 
+  //  xóa ảnh
   const handleDeleteAvatar = async () => {
     if (
       userInfo &&
-      userInfo.avatarUser.imageId !== 'image-avatar/wxcqrfpkhef33f2rxlfp'
+      userInfo.avatarUser.imageId !== `${process.env.REACT_APP_ID_IMAGE}`
     ) {
       setLoading(true);
       const data = {
@@ -168,7 +167,7 @@ function ProfilePage() {
         setLoading(false);
       }
     } else {
-      openNotification('topRight', 'Default images cannot be deleted!!');
+      openNotification('topRight', 'Không thể xóa hình ảnh mặc định!!');
       return;
     }
   };
@@ -214,16 +213,18 @@ function ProfilePage() {
                     beforeUpload={(file) => {
                       return false;
                     }}>
-                    <Button icon={<CameraOutlined />}>Upload new photo</Button>
+                    <Button icon={<CameraOutlined />}>Tải ảnh mới lên</Button>
                   </Upload>
                 </DivUpload>
                 <DivInfo>
                   <Text>Email: {user.email}</Text>
                   <Text>
-                    Phone Number:{' '}
-                    {user.phoneNumber ? user.phoneNumber : 'Not updated yet'}
+                    Số điện thoại:{' '}
+                    {user.phoneNumber ? user.phoneNumber : 'Chưa cập nhật'}
                   </Text>
-                  <Text>Gender: {user.sex ? user.sex : 'Not updated yet'}</Text>
+                  <Text>
+                    Giới tính: {user.sex ? user.sex : 'Chưa cập nhật'}
+                  </Text>
                 </DivInfo>
               </DivContentLeft>
             </ColLeft>

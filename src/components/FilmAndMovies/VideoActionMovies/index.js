@@ -60,20 +60,20 @@ function VideoActionMovies({
         <DivAction>
           <ButtonAction onClick={() => handleLike()}>
             {isLike ? (
-              <Tag color="#FFD700">Liked</Tag>
+              <Tag color="#FFD700">Đã thích</Tag>
             ) : (
-              <Tag color="#3b5999">Like</Tag>
+              <Tag color="#3b5999">Thích</Tag>
             )}
           </ButtonAction>
           <ButtonAction>
             <Tag color="#3b5999">
               <FacebookShareButton url="facebook.com" hashtag="#showhub">
-                Share
+                Chia sẻ
               </FacebookShareButton>
             </Tag>
           </ButtonAction>
           <RatingAction>
-            <label>Rating:</label>&nbsp;&nbsp;
+            <label>Đánh giá:</label>&nbsp;&nbsp;
             <div>
               <Rate
                 disabled={isRating ? true : false}
@@ -96,7 +96,7 @@ function VideoActionMovies({
         </DivServer>
         {type === 'series' && (
           <DivListEpisode>
-            <p>Episode list: </p>
+            <p>Danh sách tập: </p>
             <div>
               {listDataSeries &&
                 listDataSeries.length &&

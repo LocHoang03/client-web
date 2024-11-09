@@ -51,45 +51,45 @@ function PackageComponent({
         <ListInfo>
           <ItemInfo>
             <DivItemInfo>
-              <div>monthly price</div>
+              <div>Giá hàng tháng</div>
               <div>{item.monthlyPrice}</div>
             </DivItemInfo>
           </ItemInfo>
           <ItemInfo>
             <DivItemInfo>
-              <div>Picture and sound quality</div>
+              <div>Chất lượng hình ảnh và âm thanh</div>
               <div>{item.qualityPicture}</div>
             </DivItemInfo>
           </ItemInfo>
           <ItemInfo>
             <DivItemInfo>
-              <div>Resolution</div>
+              <div>Độ phân giải</div>
               <div>{item.resolution}</div>
             </DivItemInfo>
           </ItemInfo>
           {item.spatialSound && (
             <ItemInfo>
               <DivItemInfo>
-                <div>Spatial audio (realistic sound)</div>
+                <div>Âm thanh không gian (âm thanh trung thực)</div>
                 <div>{item.SpatialSound}</div>
               </DivItemInfo>
             </ItemInfo>
           )}
           <ItemInfo>
             <DivItemInfo>
-              <div>Supported devices</div>
+              <div>Thiết bị được hỗ trợ</div>
               <div>{item.deviceSupport}</div>
             </DivItemInfo>
           </ItemInfo>
           <ItemInfo>
             <DivItemInfo>
-              <div>Devices your family can watch at the same time</div>
+              <div>Các thiết bị mà gia đình bạn có thể xem cùng lúc</div>
               <div>{item.quantityWatch}</div>
             </DivItemInfo>
           </ItemInfo>
           <ItemInfo>
             <DivItemInfo>
-              <div>Device is downloaded</div>
+              <div>Số thiết bị được tải xuống</div>
               <div>{item.quantityDownload}</div>
             </DivItemInfo>
           </ItemInfo>

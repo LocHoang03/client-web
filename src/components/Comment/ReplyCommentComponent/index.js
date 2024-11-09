@@ -92,11 +92,11 @@ function ReplyComment({
                 <DivUpdate>
                   <ButtonSend
                     onClick={() => handleUpdateComment(itemChild._id)}>
-                    Update
+                    Cập nhật
                   </ButtonSend>
                   <ButtonSend
                     onClick={() => handleCancelComment(itemChild._id)}>
-                    Cancel
+                    Hủy bỏ
                   </ButtonSend>
                 </DivUpdate>
               </DivInput>
@@ -131,7 +131,7 @@ function ReplyComment({
                                           itemChild._id,
                                         )
                                       }>
-                                      Edit
+                                      Chỉnh sửa
                                     </ButtonComment>
                                   </Menu.Item>
                                   <Menu.Item key="delete">
@@ -142,7 +142,7 @@ function ReplyComment({
                                           itemChild._id,
                                         )
                                       }>
-                                      Delete
+                                      Xóa
                                     </ButtonComment>
                                   </Menu.Item>
                                 </Menu>
@@ -162,7 +162,7 @@ function ReplyComment({
                     <TextTime>{timeAgo()}</TextTime>
                     <ReplyButton onClick={() => handleOpenReply(itemChild._id)}>
                       <MessageFilled />
-                      <p>Reply</p>
+                      <p>Trả lời</p>
                     </ReplyButton>
                   </DivContainerAction>
                 </DivAction>

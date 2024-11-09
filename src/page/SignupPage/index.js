@@ -25,22 +25,22 @@ function SignupPage() {
   const [options, setOptions] = useState([
     {
       value: 'male',
-      label: 'Male',
+      label: 'Nam',
     },
     {
       value: 'female',
-      label: 'Female',
+      label: 'Nữ',
     },
     {
       value: 'other',
-      label: 'Other',
+      label: 'Khác',
     },
   ]);
   const [messageApi, contextHolder] = message.useMessage();
   const success = () => {
     messageApi.open({
       type: 'success',
-      content: 'Successful registration, password will be sent to your email.',
+      content: 'Đăng ký thành công, mật khẩu sẽ được gửi tới email của bạn.',
       duration: 1.5,
     });
   };
@@ -91,7 +91,7 @@ function SignupPage() {
           </TextBanner>
         </DivBanner>
         <DivContent>
-          <TextContent>Sign up to ShowHub</TextContent>
+          <TextContent>Đăng ký ShowHub</TextContent>
           <DivForm>
             <Form
               form={form}
@@ -106,33 +106,33 @@ function SignupPage() {
               onFinishFailed={onFinishFailed}
               autoComplete="off">
               <ItemForm
-                label="First Name"
+                label="Tên"
                 name="firstName"
-                message="Please input your first name!"
+                message="Vui lòng nhập tên của bạn!"
                 input={<Input onFocus={handleFocus} />}
               />
               <ItemForm
-                label="Last Name"
+                label="Họ"
                 name="lastName"
-                message="Please input your last name!"
+                message="Vui lòng nhập họ của bạn!"
                 input={<Input onFocus={handleFocus} />}
               />
               <ItemForm
                 label="Email"
                 name="email"
-                message="Please input your email!"
+                message="Vui lòng nhập email của bạn!"
                 input={<Input onFocus={handleFocus} />}
               />
               <ItemForm
-                label="Phone Number"
+                label="Số điện thoại"
                 name="phoneNumber"
-                message="Please input your phone number!"
+                message="Vui lòng nhập số điện thoại của bạn!"
                 input={<Input onFocus={handleFocus} />}
               />
               <ItemForm
-                label="Gender"
+                label="Giới tính"
                 name="sex"
-                message="Please input your sex!"
+                message="Vui lòng nhập giới tính của bạn!"
                 input={
                   <Select
                     className="select-sex-signup"
@@ -151,12 +151,12 @@ function SignupPage() {
                 wrapperCol={{
                   span: 24,
                 }}>
-                <Button htmlType="submit">Sign up</Button>
+                <Button htmlType="submit">Đăng ký</Button>
               </Form.Item>
               <DivError>{textError}</DivError>
               <DivLink>
                 <Text>
-                  Already have a account ? <Link to="/auth/login">Sign in</Link>
+                  Đã có tài khoản? <Link to="/auth/login">Đăng nhập</Link>
                 </Text>
               </DivLink>
             </Form>

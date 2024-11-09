@@ -17,6 +17,7 @@ function ListComment({ dataComment }) {
 
   const dispatch = useDispatch();
 
+  //  lấy data comment từ cha
   useEffect(() => {
     if (dataComment) {
       const reversedData = [...dataComment].reverse();
@@ -26,12 +27,14 @@ function ListComment({ dataComment }) {
     }
   }, [dataComment]);
 
+  //  mở input để nhập trả lời bình luận
   const handleOpenReply = (commentId) => {
     if (commentId) {
       setOpen((prev) => ({ ...prev, [commentId]: !prev[commentId] }));
     }
   };
 
+  //  edit or xóa comment
   const handleClickAction = (action, id) => {
     if (action === 'DELETE') {
       dispatch(deleteComment(id));
@@ -43,7 +46,11 @@ function ListComment({ dataComment }) {
     }
   };
 
+  // update comment
   const updateCommentClick = (value, id) => {
+    if (!value) {
+      return;
+    }
     const data = {
       commentId: id,
       content: value,
@@ -105,7 +112,7 @@ function ListComment({ dataComment }) {
             })}
         </DivListComment>
       ) : (
-        <NoCommentTitle>Be the first to comment!!</NoCommentTitle>
+        <NoCommentTitle>Hãy là người đầu tiên bình luận!!</NoCommentTitle>
       )}
     </>
   );

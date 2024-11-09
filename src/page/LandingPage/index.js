@@ -45,15 +45,19 @@ function LandingPage() {
           </DivBanner>
           <DivContent>
             <TextTitle>
-              Enjoy hit movies, featured TV shows and more from only 30 dollars.
+              Thưởng thức những bộ phim đình đám, chương trình truyền hình nổi
+              bật và hơn thế nữa chỉ từ 30 đô la.
             </TextTitle>
-            <TextContent>Join today, cancel anytime.</TextContent>
+            <TextContent>
+              Tham gia ngay hôm nay, hủy bỏ bất cứ lúc nào.
+            </TextContent>
             <TextContent2>
-              Are you ready to watch? Log in to reactivate your membership.
+              Bạn đã sẵn sàng để xem chưa? Đăng nhập để kích hoạt lại tư cách
+              thành viên của bạn.
             </TextContent2>
             <ButtonLogin>
               <Link to="/auth/login">
-                Start <RightOutlined />
+                Bắt đầu <RightOutlined />
               </Link>
             </ButtonLogin>
           </DivContent>
@@ -62,10 +66,10 @@ function LandingPage() {
       <DivInformation>
         <RowInformation>
           <ColInformation span={12} md={12} lg={12} xs={24}>
-            <TitleInformation>Enjoy on your TV</TitleInformation>
+            <TitleInformation>Thưởng thức trên TV của bạn</TitleInformation>
             <TextInformation>
-              Watch on smart TVs, Playstation, Xbox, Chromecast, Apple TV,
-              Blu-ray players and more.
+              Xem trên TV thông minh, Playstation, Xbox, Chromecast, Apple TV,
+              Đầu phát Blu-ray và hơn thế nữa.
             </TextInformation>
           </ColInformation>
           <ColInformation span={12} md={12} lg={12} xs={24}>
@@ -76,10 +80,11 @@ function LandingPage() {
       <DivInformation>
         <RowInformation>
           <ColInformation span={12} md={12} lg={12} xs={24}>
-            <TitleInformation>Watch everywhere</TitleInformation>
+            <TitleInformation>Xem mọi nơi</TitleInformation>
             <TextInformation>
-              Stream unlimited movies and TV shows on your phone, tablet, laptop
-              and TV.
+              Truyền phát phim và chương trình truyền hình không giới hạn trên
+              điện thoại, máy tính bảng, máy tính xách tay của bạn và truyền
+              hình.
             </TextInformation>
           </ColInformation>
           <ColInformation span={12} md={12} lg={12} xs={24}>

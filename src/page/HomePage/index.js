@@ -86,12 +86,12 @@ function HomePage() {
       {movies && series ? (
         <>
           <Content
-            title={'Latest movies'}
+            title={'Phim mới nhất'}
             listFilm={movies.data}
             type="movies"
           />
-          <Content title="Movies" listFilm={movies.data} type="movies" />
-          <Content title="Series" listFilm={series.data} type="series" />
+          <Content title="Phim lẻ" listFilm={movies.data} type="movies" />
+          <Content title="Phim bộ" listFilm={series.data} type="series" />
         </>
       ) : (
         <DivLoading>

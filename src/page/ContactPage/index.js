@@ -97,10 +97,10 @@ function ContactPage() {
         comment: '',
       });
       success(
-        'Thank you for your feedback. We have received your information and will respond via email as soon as possible.',
+        'Cảm ơn bạn đã phản hồi của bạn. Chúng tôi đã nhận được thông tin của bạn và sẽ phản hồi qua email trong thời gian sớm nhất.',
       );
     } else {
-      error('The system is experiencing a problem. Please try again later!!');
+      error('Hệ thống đang gặp sự cố. Vui lòng thử lại sau!!');
     }
   };
   const onFinishFailed = (errorInfo) => {};
@@ -118,14 +118,16 @@ function ContactPage() {
       <Container>
         <DivContent>
           <DivTitle>
-            <Title>Contact Us</Title>
-            <Title1>Have any question? We'd love to hear from you</Title1>
+            <Title>Liên hệ với chúng tôi</Title>
+            <Title1>
+              Bạn có câu hỏi nào không? Chúng tôi muốn nghe ý kiến ​​từ bạn
+            </Title1>
           </DivTitle>
           <RowContent>
             <ColContent span={8} lg={8} md={12} sm={12} xs={24}>
               <div>
                 <div>
-                  <TitleLeft>Some frequently asked questions</TitleLeft>
+                  <TitleLeft>Một số câu hỏi thường gặp</TitleLeft>
                   <DivListQuestion>
                     {questions &&
                       questions.map((item, id) => {
@@ -150,14 +152,14 @@ function ContactPage() {
             <ColContent span={8} lg={8} md={12} sm={12} xs={24}>
               <div>
                 <div>
-                  <TitleCenter>Contact Info</TitleCenter>
+                  <TitleCenter>Thông tin liên hệ</TitleCenter>
                   <ListCenter>
                     <ItemCenter>
                       <div>
                         <PhoneOutlined />
                       </div>
                       <div>
-                        <p>Telephone</p>
+                        <p>Điện thoại</p>
                         <p>
                           <a href="tel:+84967936728">0967936728</a>
                         </p>
@@ -181,11 +183,11 @@ function ContactPage() {
                         <EnvironmentOutlined />
                       </div>
                       <div>
-                        <p>Address</p>
+                        <p>Địa chỉ</p>
                         <p>
                           <address>
-                            00 Le Trong Tan Street, Tay Thanh Ward, Tan Phu
-                            District, Ho Chi Minh City
+                            00 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú,
+                            Thành phố Hồ Chí Minh
                           </address>
                         </p>
                       </div>
@@ -196,7 +198,7 @@ function ContactPage() {
             </ColContent>
             <ColContent span={8} lg={8} md={12} sm={24} xs={24}>
               <div>
-                <TitleRight>Ask a question</TitleRight>
+                <TitleRight>Đặt câu hỏi</TitleRight>
                 <DivForm>
                   <Form
                     form={form}
@@ -215,20 +217,20 @@ function ContactPage() {
                     layout="vertical"
                     autoComplete="off">
                     <InputItem
-                      label="Title"
+                      label="Tiêu đề"
                       name="title"
-                      message="Please input your title!"
+                      message="Vui lòng nhập tiêu đề của bạn!"
                       input={<Input />}
                     />
                     <InputItem
-                      label="Comment"
+                      label="Bình luận"
                       name="comment"
-                      message="Please input your comment!"
+                      message="Hãy nhập câu hỏi của bạn!"
                       input={
                         <TextArea
                           maxLength={200}
                           // onChange={onChange}
-                          placeholder="Enter comments"
+                          placeholder="Nhập bình luận"
                           style={{
                             height: 100,
                             resize: 'none',
@@ -241,7 +243,7 @@ function ContactPage() {
                         span: 24,
                       }}>
                       <Button type="primary" htmlType="submit">
-                        SEND MESSAGE
+                        GỬI TIN NHẮN
                       </Button>
                     </Form.Item>
                   </Form>

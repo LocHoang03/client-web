@@ -62,7 +62,7 @@ function FilmSameComponent(props) {
   return (
     <DivContent>
       <DivTitle>
-        <TextTitle>You might want to check it out</TextTitle>
+        <TextTitle>Bạn có thể muốn xem thử</TextTitle>
       </DivTitle>
       <DivContentFilm className="container-data-slider">
         <ButtonSlick

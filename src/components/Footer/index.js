@@ -29,23 +29,21 @@ function Footer() {
           </ColFooterTop>
           <ColFooterMiddle span={10} xs={24} sm={24} md={24} lg={10}>
             <Text>
-              Managing agency: MobiFone Telecommunications Corporation -
-              Address: No. 01 Pham Van A Street, Yen Hoa Ward, Cau Giay
-              District, Ho Chi Minh City.
+              Cơ quan chủ quản: Tổng công ty ShowHub - Địa chỉ: Số 01 Đường Phạm
+              Văn A, Phường Yên Hòa, Quận Cầu Giấy , Thành phố Hồ Chí Minh.
             </Text>
             <Text>
-              Phone/Fax: +84967936728 - Email:{' '}
+              Điện thoại/Fax: +84967936728 - Email:{' '}
               <span>hoangphuocloc.phurieng@gmail.com</span>
             </Text>
             <Text>
-              Business Registration Certificate Number: XXXXXXXXX issued by
-              Hanoi Department of Planning and Investment for the first time on
-              September 20, 2010, registered for the 10th change on March 10,
-              2021
+              Số Giấy chứng nhận ĐKKD: XXXXXXXXX do cơ quan cấp Sở Kế hoạch và
+              Đầu tư Hà Nội lần đầu tiên Ngày 20/9/2010, đăng ký thay đổi lần
+              thứ 10 ngày 10/3, 2021.
             </Text>
             <Text>
-              License to Provide Radio and Television Services on the Internet
-              No. 273/GP-BTTTT issued on May 12, 2021
+              Giấy phép cung cấp dịch vụ phát thanh, truyền hình trên Internet
+              Số 273/GP-BTTTT cấp ngày 12/5/2021.
             </Text>
           </ColFooterMiddle>
           <ColFooterBot span={6} xs={24} sm={24} md={24} lg={6}>
@@ -72,10 +70,10 @@ function Footer() {
                 <PhoneFilled /> <span>0101</span>
               </DivSupport>
               <DivSupport>
-                <MessageOutlined /> <span>Support</span>
+                <MessageOutlined /> <span>Hỗ trợ</span>
               </DivSupport>
             </DivContentSupport>
-            <DivTextDownload>Download the application at</DivTextDownload>
+            <DivTextDownload>Tải ứng dụng tại</DivTextDownload>
             <DivDownload>
               <img
                 src="https://res.cloudinary.com/dzxupp48t/image/upload/v1714388446/image-webFilm/mztdosa6cg3mn1t57i8a.png"

@@ -46,15 +46,15 @@ function HeaderSearchLogin() {
   const items = [
     {
       key: 'profile',
-      label: <Link to="/my-profile">My profile</Link>,
+      label: <Link to="/my-profile">Hồ sơ</Link>,
     },
     {
       key: 'myFavoriteMovies',
-      label: <Link to="/my-favorite-movies">My Favorite Movies</Link>,
+      label: <Link to="/my-favorite-movies">Phim yêu thích</Link>,
     },
     {
       key: 'logout',
-      label: <ButtonLogout onClick={handleLogout}>Log out</ButtonLogout>,
+      label: <ButtonLogout onClick={handleLogout}>Đăng xuất</ButtonLogout>,
     },
   ];
 

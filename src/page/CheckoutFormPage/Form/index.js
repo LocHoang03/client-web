@@ -55,6 +55,7 @@ const CheckoutForm = (props) => {
           userId: userInfo.userId,
         };
         let response;
+        // api gọi khi thanh toán thành công
         if (isLogin === 2) {
           response = await fetch(API_ADD_DATA_PACKAGE_PAYMENT + '?login=true', {
             method: 'POST',
@@ -77,7 +78,7 @@ const CheckoutForm = (props) => {
             },
           );
         }
-
+        //sau đó chuyển tới trang thanh toán thành công
         const responseJson = await response.json();
         if (responseJson.success) {
           await localStorage.setItem('login', true);
@@ -93,7 +94,7 @@ const CheckoutForm = (props) => {
     <FormCheckout onSubmit={handleSubmit}>
       <PaymentElement />
       <ButtonCheckout type="submit" disabled={!stripe || !elements}>
-        Pay
+        Thanh toán
       </ButtonCheckout>
       {errorMessage && <DivError>{errorMessage}</DivError>}
     </FormCheckout>

@@ -77,7 +77,7 @@ const DetailFilmPage = (props) => {
     ]);
   }, [dispatch, filmId, userInfo, props.watching]);
 
-  //get name category
+  //get phim chi tiết và thể loại của phim đó
   useEffect(() => {
     if (movies && category) {
       let objectData = { category: [], film: null };
@@ -122,7 +122,7 @@ const DetailFilmPage = (props) => {
     }
   }, [data, userInfo]);
 
-  // check package user
+  // check package user (ktra xem gói phim người dùng có đủ quyền để xem dc bộ phim này ko)
   useEffect(() => {
     setIsWatching(true);
     if (data?.film?.listPackageIdBand && order?.data[0]?.packageId) {
@@ -139,11 +139,11 @@ const DetailFilmPage = (props) => {
       navigate('/film/watching-movies/' + filmId);
     } else {
       confirm({
-        title: 'Operation failed!!',
-        content: `Your service package cannot watch this movie, please upgrade to a higher service 
-        package to be able to watch this movie. Have you recently upgraded your current package?`,
-        okText: 'Yes',
-        cancelText: 'No',
+        title: 'Hoạt động không thành công!!',
+        content: `Gói dịch vụ của bạn không xem được phim này, vui lòng nâng cấp lên dịch vụ cao hơn 
+        gói để có thể xem phim này. Bạn có nâng cấp gói hiện tại của mình không?`,
+        okText: 'Đồng ý',
+        cancelText: 'Từ chối',
         onOk() {
           navigate('/package-upgrade');
         },
@@ -152,6 +152,7 @@ const DetailFilmPage = (props) => {
     }
   };
 
+  // thực hiện like phim
   const handleClickLikeMovies = async () => {
     const data = {
       userId: userInfo.userId,
@@ -161,7 +162,7 @@ const DetailFilmPage = (props) => {
     await dispatch(handleLikeMovies(data));
     setIsLike((prev) => !prev);
   };
-
+  // thực hiện đánh giá phim
   const handleRatingMovies = async (value) => {
     const data = {
       filmId: filmId,
@@ -206,7 +207,7 @@ const DetailFilmPage = (props) => {
                   <ImageFilm src={data.film.imageUrl.url} />
                   <DivWatchButton>
                     <ButtonWatch onClick={handleWatchingMovies}>
-                      Watch a movie
+                      Xem phim
                     </ButtonWatch>
                   </DivWatchButton>
                 </ColLeft>
@@ -214,7 +215,7 @@ const DetailFilmPage = (props) => {
                   <InfoMovies data={data} />
                 </ColRight>
                 <DivContent>
-                  <TitleContent>Content</TitleContent>
+                  <TitleContent>Nội dung</TitleContent>
                   <TextContent>{data.film.description}</TextContent>
                 </DivContent>
               </>
@@ -253,19 +254,19 @@ const DetailFilmPage = (props) => {
         </ColDetail>
         <ColDetail span={7} lg={8} xs={24} right={'right'}>
           <FilmMost
-            title={'Newly updated movie'}
+            title={'Phim mới cập nhật'}
             film={mostNew.data}
             filmId={filmId}
             type="movies"
           />
           <FilmMost
-            title={'Most watched movies'}
+            title={'Phim được xem nhiều nhất'}
             film={mostView.data}
             filmId={filmId}
             type="movies"
           />
           <FilmMost
-            title={'Recommended film'}
+            title={'Phim đề xuất'}
             film={mostRating.data}
             filmId={filmId}
             type="movies"

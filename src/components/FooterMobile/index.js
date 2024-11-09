@@ -17,7 +17,7 @@ function FooterMobile() {
             <p>
               <HomeOutlined />
             </p>
-            <p>Home</p>
+            <p>Trang chủ</p>
           </Link>
         </ColFooter>
         <ColFooter>
@@ -25,7 +25,7 @@ function FooterMobile() {
             <p>
               <PlayCircleOutlined />
             </p>
-            <p>Movies</p>
+            <p>Phim lẻ</p>
           </Link>
         </ColFooter>
         <ColFooter>
@@ -33,7 +33,7 @@ function FooterMobile() {
             <p>
               <PlayCircleOutlined />
             </p>
-            <p>Series</p>
+            <p>Phim bộ</p>
           </Link>
         </ColFooter>
         <ColFooter>
@@ -43,7 +43,7 @@ function FooterMobile() {
             <p>
               <ContactsOutlined />
             </p>
-            <p>Contact</p>
+            <p>Liên hệ</p>
           </Link>
         </ColFooter>
         <ColFooter>

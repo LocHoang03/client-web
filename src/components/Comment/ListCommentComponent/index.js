@@ -67,6 +67,9 @@ function ListCommentComponent({
   }
 
   const handleUpdateComment = (id) => {
+    if (!value) {
+      return;
+    }
     updateCommentClick(value, id);
   };
   const handleCancelComment = (id) => {
@@ -88,10 +91,10 @@ function ListCommentComponent({
                 />
                 <DivUpdate>
                   <ButtonSend onClick={() => handleUpdateComment(item._id)}>
-                    Update
+                    Cập nhật
                   </ButtonSend>
                   <ButtonSend onClick={() => handleCancelComment(item._id)}>
-                    Cancel
+                    Hủy bỏ
                   </ButtonSend>
                 </DivUpdate>
               </DivInput>
@@ -117,7 +120,7 @@ function ListCommentComponent({
                                       onClick={() =>
                                         handleClickAction('UPDATE', item._id)
                                       }>
-                                      Edit
+                                      Chỉnh sửa
                                     </ButtonComment>
                                   </Menu.Item>
                                   <Menu.Item key="delete">
@@ -125,7 +128,7 @@ function ListCommentComponent({
                                       onClick={() =>
                                         handleClickAction('DELETE', item._id)
                                       }>
-                                      Delete
+                                      Xóa
                                     </ButtonComment>
                                   </Menu.Item>
                                 </Menu>
@@ -145,7 +148,7 @@ function ListCommentComponent({
                     <TextTime>{timeAgo()}</TextTime>
                     <ReplyButton onClick={() => handleOpenReply(item._id)}>
                       <MessageFilled />
-                      <p>Reply</p>
+                      <p>Trả lời</p>
                     </ReplyButton>
                   </DivContainerAction>
                 </DivAction>

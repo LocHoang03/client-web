@@ -24,6 +24,7 @@ import {
 } from '../../configs/apis';
 import { Helmet } from 'react-helmet-async';
 
+// lựa chọn gói phim
 function PaymentPage(props) {
   const [dataChoosePayment, setDataChoosePayment] = useState();
   const [data, setData] = useState();
@@ -32,7 +33,7 @@ function PaymentPage(props) {
   const { userInfo } = useContext(CheckLoginContext);
 
   const navigate = useNavigate();
-
+  // lấy all gói phim
   useEffect(() => {
     const fetchAllPayment = async () => {
       const response = await fetch(API_GET_ALL_PAYMENT_DATA);
@@ -43,6 +44,7 @@ function PaymentPage(props) {
     fetchAllPayment();
   }, []);
 
+  // các gói phim thấp hơn gói phim đang mua hiện tại (trường hợp đăng nhập rồi)
   useEffect(() => {
     setIsBlock(false);
     const fetchPaymentDisabled = async () => {
@@ -86,6 +88,7 @@ function PaymentPage(props) {
     }
   }, [props.login, userInfo]);
 
+  // bấm tiếp tục
   const handleCLickContinue = async () => {
     await localStorage.setItem(
       'dataPayment',
@@ -109,9 +112,7 @@ function PaymentPage(props) {
         </PaymentHeader>
       )}
       <ServicePack>
-        <TitleService>
-          Choose the service package that's right for you
-        </TitleService>
+        <TitleService>Chọn gói dịch vụ phù hợp với bạn</TitleService>
         <DivPackage>
           <RowPack>
             {data &&
@@ -132,15 +133,15 @@ function PaymentPage(props) {
         </DivPackage>
         <DivNotification>
           <p>
-            Whether you can watch in HD (720p), Full HD (1080p), Ultra HD (4K)
-            and HDR depends on your internet service and device capabilities.
-            Not all content is available in all resolutions. See our Terms of
-            Use for more details.
+            Cho dù bạn có thể xem ở chế độ HD (720p), Full HD (1080p), Ultra HD
+            (4K) và HDR tùy thuộc vào dịch vụ Internet và khả năng của thiết bị.
+            Không phải tất cả nội dung đều có sẵn ở mọi độ phân giải. Xem Điều
+            khoản của chúng tôi Sử dụng để biết thêm chi tiết.
           </p>
           <p>
-            Only people who live with you can use your account. Watch on 4
-            different devices at once with the Premium plan, 2 with the Standard
-            plan, and 1 with the Basic and Mobile plans.
+            Chỉ những người sống cùng bạn mới có thể sử dụng tài khoản của bạn.
+            Xem vào ngày 4 nhiều thiết bị khác nhau cùng lúc với gói Premium, 2
+            với gói Standard gói và 1 với gói Cơ bản và Di động.
           </p>
         </DivNotification>
         <DivActionContinue>
@@ -148,7 +149,7 @@ function PaymentPage(props) {
             onClick={handleCLickContinue}
             disabled={isBlock ? true : false}
             block={isBlock}>
-            Continue
+            Tiếp tục
           </ButtonContinue>
         </DivActionContinue>
       </ServicePack>

@@ -53,7 +53,7 @@ function Header() {
                     <Link
                       to="/"
                       className={pathname === '/' && 'bg-header-navbar'}>
-                      Home
+                      Trang chủ
                     </Link>
                   </ItemNav>
                   <ItemNav>
@@ -62,7 +62,7 @@ function Header() {
                       className={
                         pathname.slice(1) === 'movies' && 'bg-header-navbar'
                       }>
-                      Movies
+                      Phim lẻ
                     </Link>
                   </ItemNav>
                   <ItemNav>
@@ -71,7 +71,7 @@ function Header() {
                       className={
                         pathname.slice(1) === 'series' && 'bg-header-navbar'
                       }>
-                      Series
+                      Phim bộ
                     </Link>
                   </ItemNav>
                   <ItemNav>
@@ -80,7 +80,7 @@ function Header() {
                       className={
                         pathname.slice(1) === 'contact' && 'bg-header-navbar'
                       }>
-                      Contact Us
+                      Liên hệ
                     </Link>
                   </ItemNav>
                   <ItemNav>
@@ -90,7 +90,7 @@ function Header() {
                         pathname.slice(1) === 'terms-and-conditions' &&
                         'bg-header-navbar'
                       }>
-                      Terms and Conditions
+                      Điều khoản và Điều kiện
                     </Link>
                   </ItemNav>
                 </ListNav>

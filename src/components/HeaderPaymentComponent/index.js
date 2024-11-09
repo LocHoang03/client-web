@@ -27,7 +27,7 @@ function HeaderPaymentComponent() {
           <LogoImage height="40" width="200" />
         </h2>
       </LogoHeader>
-      <BtnActionLogout onClick={handleLogout}>Log out</BtnActionLogout>
+      <BtnActionLogout onClick={handleLogout}>Đăng xuất</BtnActionLogout>
     </ContentPaymentHeader>
   );
 }

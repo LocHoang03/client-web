@@ -63,6 +63,7 @@ function InputSearchLayout(props) {
     }
   }, [searchKey, movies, series]);
 
+  //  tới trang kết quả tìm kiếm
   const handleSearchFilm = (e) => {
     e.preventDefault();
     navigate(`/search?result=${searchKey}`, {
@@ -104,7 +105,7 @@ function InputSearchLayout(props) {
       <FormSearch onSubmit={handleSearchFilm}>
         <InputSearch
           name="search"
-          placeholder="Search name film"
+          placeholder="Tìm kiếm tên phim"
           value={searchKey}
           onFocus={handleFocusInput}
           onBlur={handleBlurInput}
@@ -145,7 +146,7 @@ function InputSearchLayout(props) {
                 );
               })
             ) : (
-              <DivInfo>No movies found matching the request!!</DivInfo>
+              <DivInfo>Không tìm thấy phim nào phù hợp với yêu cầu!!</DivInfo>
             )}
           </ListFilm>
         </DivSelect>

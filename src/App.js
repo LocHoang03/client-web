@@ -54,13 +54,15 @@ function App() {
   const dispatch = useDispatch();
 
   const { userInfo, isLogin } = useContext(CheckLoginContext);
-  const movies = useSelector((state) => state.moviesSlice);
+  const movies = useSelector((state) => state.moviesSlice); // đầu tiên là 0 dữ liệu
   const series = useSelector((state) => state.seriesSlice);
 
+  // gọi danh sách phim và series
   useEffect(() => {
     Promise.all([dispatch(fetchAllMovies()), dispatch(fetchAllSeries())]);
   }, [dispatch]);
 
+  // kiểm tra phim or series có tồn tại ko nếu k đẩy về trang chủ
   useEffect(() => {
     let check = false;
     const arr = window.location.pathname.split('/');
@@ -93,10 +95,12 @@ function App() {
     }
   }, [pathname, series, movies, navigate]);
 
+  // cuộn lên đầu trang khi chuyển qua url mới
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  // kiểm tra token đăng nhập -> hết hạn out đăng nhập
   useEffect(() => {
     if (localStorage.getItem('tokenUser')) {
       const tokenDecoded = jwtDecode(localStorage.getItem('tokenUser'));
@@ -110,13 +114,14 @@ function App() {
     }
   }, [location, navigate]);
 
+  // cuộn xuống cuối đoạn chat
   const scrollToBottom = () => {
     const scrollContainer = document.querySelector('.chat-content-scroll');
     if (scrollContainer) {
       scrollContainer.scrollTop = scrollContainer.scrollHeight;
     }
   };
-  // socket chat
+  // socket chat - mở đóng giao diện chat
   const handleOpenCustomerSupport = () => {
     setIsModal((prev) => !prev);
   };
@@ -128,11 +133,13 @@ function App() {
     setIsModal(false);
   };
 
+  // rời phòng chát
   const handleOutRoom = () => {
     setVisible(false);
     setIsState(0);
   };
 
+  // thực hiện tạo phòng chat và gửi thông tin phòng chát tới admin CSKH
   const handleChatCustomer = async () => {
     setIsState(2);
     setTimeout(() => {

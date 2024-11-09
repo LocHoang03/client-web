@@ -31,11 +31,12 @@ function ResetPasswordPage() {
   const success = () => {
     messageApi.open({
       type: 'success',
-      content: 'Password changed successfully.',
+      content: 'Mật khẩu đã được thay đổi thành công.',
     });
   };
 
   useEffect(() => {
+    // kiểm tra token lấy lại mật khẩu đã hết hạn chưa
     const verifyToken = async () => {
       const response = await fetch(API_VERIFY_TOKEN_RESET_PASSWORD, {
         method: 'POST',
@@ -104,7 +105,7 @@ function ResetPasswordPage() {
           </TextBanner>
         </DivBanner>
         <DivContent>
-          <TextContent>Reset password</TextContent>
+          <TextContent>Đặt lại mật khẩu</TextContent>
           <DivForm>
             <Form
               form={form}
@@ -119,15 +120,15 @@ function ResetPasswordPage() {
               onFinishFailed={onFinishFailed}
               autoComplete="off">
               <ItemForm
-                label="New password"
+                label="Mật khẩu mới"
                 name="newPassword"
-                message="Please input your new password!"
+                message="Vui lòng nhập mật khẩu mới của bạn!"
                 input={<Input.Password onFocus={handleFocus} />}
               />
               <ItemForm
-                label="Confirm new password"
+                label="Xác nhận mật khẩu mới"
                 name="confirmNewPassword"
-                message="Please input your confirm new password!"
+                message="Vui lòng nhập xác nhận mật khẩu mới của bạn!"
                 input={<Input.Password onFocus={handleFocus} />}
               />
 
@@ -136,7 +137,7 @@ function ResetPasswordPage() {
                 wrapperCol={{
                   span: 24,
                 }}>
-                <Button htmlType="submit">Submit</Button>
+                <Button htmlType="submit">Xác nhận</Button>
               </Form.Item>
               <DivError>{textError}</DivError>
             </Form>

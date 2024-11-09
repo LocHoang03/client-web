@@ -32,35 +32,36 @@ function InfoPackage() {
     <DivContainer>
       <DivInfo>
         <ListInfo>
-          <ItemInfo>Type Package: {data && data.packageId.typePack}</ItemInfo>
-          <ItemInfo>Resolution: {data && data.packageId.resolution}</ItemInfo>
+          <ItemInfo>Loại gói: {data && data.packageId.typePack}</ItemInfo>
+          <ItemInfo>Độ phân giải: {data && data.packageId.resolution}</ItemInfo>
           <ItemInfo>
-            Quality Picture: {data && data.packageId.qualityPicture}
+            Chất lượng hình ảnh: {data && data.packageId.qualityPicture}
           </ItemInfo>
           <ItemInfo>
-            Monthly Price: {data && data.packageId.monthlyPrice} USD
+            Giá hàng tháng: {data && data.packageId.monthlyPrice} USD
           </ItemInfo>
           <ItemInfo>
-            Device Support: {data && data.packageId.deviceSupport}
+            Hỗ trợ thiết bị: {data && data.packageId.deviceSupport}
           </ItemInfo>
           <ItemInfo>
-            Quantity Download: {data && data.packageId.deviceSupport}
+            Số lượng tải xuống: {data && data.packageId.deviceSupport}
           </ItemInfo>
           <ItemInfo>
-            Quantity Watch: {data && data.packageId.deviceSupport}
+            Số lượng thiết bị xem: {data && data.packageId.deviceSupport}
           </ItemInfo>
           <ItemInfo>
-            Time order: {dayjs(data && data.createAt).format('DD-MM-YYYY')}
+            Thời gian thanh toán:{' '}
+            {dayjs(data && data.createAt).format('DD-MM-YYYY')}
           </ItemInfo>
           <ItemInfo>
-            Expired time:{' '}
+            Thời hạn gói:{' '}
             {dayjs(data && data.expirationDate).format('DD-MM-YYYY')}
           </ItemInfo>
         </ListInfo>
       </DivInfo>
       <DivAction>
         <Button type="primary" onClick={handleUpgradePackage}>
-          Package Upgrade
+          Nâng cấp gói
         </Button>
       </DivAction>
     </DivContainer>

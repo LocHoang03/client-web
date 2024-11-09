@@ -5,26 +5,26 @@ function InfoMovies({ data }) {
     <>
       <Title>{data?.film?.title}</Title>
       <TextFilm>
-        Release date:&nbsp;
+        Năm phát hành:&nbsp;
         {data?.film?.releaseDate}
       </TextFilm>
-      <TextFilm>Director: {data?.film?.director}</TextFilm>
-      <TextFilm>Cast: {data?.film?.cast}</TextFilm>
-      <TextFilm>Duration: {data?.film?.duration} minute</TextFilm>
+      <TextFilm>Đạo diễn: {data?.film?.director}</TextFilm>
+      <TextFilm>Diễn viên: {data?.film?.cast}</TextFilm>
+      <TextFilm>Thời lượng: {data?.film?.duration} minute</TextFilm>
       <TextFilm>
-        <span>Rating:&nbsp;</span>
+        <span>Đánh giá:&nbsp;</span>
         <span>
           {data?.film?.rating}/5 ({data?.film?.totalRating} evaluate)
         </span>
       </TextFilm>
       <TextFilm>
-        Country:{' '}
+        Quốc gia:{' '}
         {data?.film?.country.map((item, id) => {
           return <TagCategory key={id}>{item}</TagCategory>;
         })}
       </TextFilm>
-      <TextFilm>
-        Category:{' '}
+      <TextFilm style={{ lineHeight: 2.3 }}>
+        Thể loại:{' '}
         {data?.category?.map((item, id) => {
           return <TagCategory key={id}>{item}</TagCategory>;
         })}

@@ -2,6 +2,7 @@ import React from 'react';
 import { ButtonLayout } from './styles';
 
 function LayoutButton(props) {
+  //  đi tới chi tiết phim
   const handleClickFilm = () => {
     props.handleWatching();
   };

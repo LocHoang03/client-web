@@ -5,7 +5,7 @@ function LoadingPage() {
   return (
     <div className="loading-component">
       <Helmet>
-        <title>Loading</title>
+        <title>Đang tải</title>
         <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <div>

@@ -44,7 +44,7 @@ function ReplyTextComponent(props) {
         onChange={(e) => setText(e.target.value)}
         placeholder="Write feedback"
       />
-      <ButtonSend onClick={handleSendComment}>Send</ButtonSend>
+      <ButtonSend onClick={handleSendComment}>Gửi</ButtonSend>
     </DivInput>
   );
 }

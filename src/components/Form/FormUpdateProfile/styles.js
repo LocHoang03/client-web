@@ -7,6 +7,10 @@ export const DivContentRight = styled.div`
 
 export const DivForm = styled.div`
   color: var(--white-bg);
+
+  & form {
+    margin: 0 auto;
+  }
   & button {
     width: 36%;
     margin-top: 16px;

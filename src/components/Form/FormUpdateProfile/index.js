@@ -11,14 +11,15 @@ function FormUpdateProfile(props) {
   const { updateUserInfo } = useContext(CheckLoginContext);
   const [loading, setLoading] = useState(false);
 
+  // update info hoặc password
   const onFinish = async (values) => {
     if (props.type === 'edit') {
       if (!validator.isEmail(values.email)) {
-        props.error('Incorrect email format!!');
+        props.error('Định dạng email không chính xác!!');
         return;
       }
       if (!validator.isMobilePhone(values.phoneNumber)) {
-        props.error('Incorrect phone number format!!');
+        props.error('Định dạng số điện thoại không chính xác!!');
         return;
       }
       const response = await fetch(API_UPDATE_PROFILE, {
@@ -33,7 +34,7 @@ function FormUpdateProfile(props) {
       if (json.success) {
         setLoading(true);
         setTimeout(() => {
-          props.success('Update profile successful.');
+          props.success('Cập nhật hồ sơ thành công');
           updateUserInfo(json.token);
           setLoading(false);
         }, 1000);
@@ -53,7 +54,7 @@ function FormUpdateProfile(props) {
       if (json.success) {
         setLoading(true);
         setTimeout(() => {
-          props.success('Change password successful.');
+          props.success('Đổi mật khẩu thành công');
           updateUserInfo(json.token);
           setLoading(false);
         }, 1000);
@@ -93,27 +94,28 @@ function FormUpdateProfile(props) {
             layout="vertical"
             autoComplete="off">
             <InputItem
-              label="First Name"
-              name="firstName"
-              message="Please input your first name!"
+              label="Last Name"
+              name="lastName"
+              message="Vui lòng nhập họ của bạn!"
               input={<Input />}
             />
             <InputItem
-              label="Last Name"
-              name="lastName"
-              message="Please input your last name!"
+              label="First Name"
+              name="firstName"
+              message="Vui lòng nhập tên của bạn!"
               input={<Input />}
             />
+
             <InputItem
               label="E-mail"
               name="email"
-              message="Please input your email!"
+              message="Vui lòng nhập email của bạn!"
               input={<Input />}
             />
             <InputItem
               label="Phone Number"
               name="phoneNumber"
-              message="Please input your phone number!"
+              message="Vui lòng nhập số điện thoại của bạn!"
               input={<Input />}
             />
             <InputItem
@@ -135,7 +137,7 @@ function FormUpdateProfile(props) {
                 span: 24,
               }}>
               <Button type="primary" htmlType="submit">
-                Update
+                Cập nhật
               </Button>
             </Form.Item>
           </Form>
@@ -158,19 +160,19 @@ function FormUpdateProfile(props) {
             <InputItem
               label="Current Password"
               name="currentPassword"
-              message="Please input your current password!"
+              message="Vui lòng nhập mật khẩu hiện tại của bạn!"
               input={<Input.Password />}
             />
             <InputItem
               label="New Password"
               name="newPassword"
-              message="Please input your new password!"
+              message="Vui lòng nhập mật khẩu mới của bạn!"
               input={<Input.Password />}
             />
             <InputItem
               label="Confirm New Password"
               name="confirmNewPassword"
-              message="Please input your confirm new password!"
+              message="Vui lòng nhập xác nhận mật khẩu mới của bạn!"
               input={<Input.Password />}
             />
             <Form.Item
@@ -178,7 +180,7 @@ function FormUpdateProfile(props) {
                 span: 24,
               }}>
               <Button type="primary" htmlType="submit">
-                Update
+                Cập nhật
               </Button>
             </Form.Item>
           </Form>

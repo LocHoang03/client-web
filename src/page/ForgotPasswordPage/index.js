@@ -30,7 +30,7 @@ function ForgotPasswordPage() {
   const success = () => {
     messageApi.open({
       type: 'success',
-      content: 'Request sent successfully.',
+      content: 'Yêu cầu được gửi thành công.',
     });
   };
 
@@ -82,7 +82,7 @@ function ForgotPasswordPage() {
           </TextBanner>
         </DivBanner>
         <DivContent>
-          <TextContent>Forgot password</TextContent>
+          <TextContent>Quên mật khẩu</TextContent>
           <DivForm>
             <Form
               form={form}
@@ -99,7 +99,7 @@ function ForgotPasswordPage() {
               <ItemForm
                 label="Email"
                 name="email"
-                message="Please input your email!"
+                message="Vui lòng nhập email của bạn!"
                 input={<Input onFocus={handleFocus} />}
               />
 
@@ -108,13 +108,14 @@ function ForgotPasswordPage() {
                 wrapperCol={{
                   span: 24,
                 }}>
-                <Button htmlType="submit">Send</Button>
+                <Button htmlType="submit">Gửi</Button>
               </Form.Item>
               <DivError>{textError}</DivError>
               <DivLink>
                 <Text>
                   <Link to="/auth/login">
-                    <ArrowLeftOutlined /> Back to Login
+                    <ArrowLeftOutlined />
+                    Quay lại đăng nhập
                   </Link>
                 </Text>
               </DivLink>

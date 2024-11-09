@@ -33,7 +33,7 @@ function CommentComponent(props) {
     Promise.all([dispatch(fetchAllComment())]);
   }, [dispatch]);
 
-  //get comment user
+  //get all comment user
   useEffect(() => {
     if (comment) {
       let data = [];
@@ -46,7 +46,11 @@ function CommentComponent(props) {
     }
   }, [comment, filmId, seriesId]);
 
+  //  thực hiện binh fluan
   const handleSendComment = async () => {
+    if (!value) {
+      return;
+    }
     const data = {
       data: {
         userId: userInfo.userId,
@@ -65,7 +69,7 @@ function CommentComponent(props) {
       <DivComment>
         <DivTitle>
           <TitleComment>
-            Comments <MessageOutlined />
+            Bình luận <MessageOutlined />
           </TitleComment>
         </DivTitle>
         <DivInput>
@@ -74,7 +78,7 @@ function CommentComponent(props) {
             onChange={(e) => setValue(e.target.value)}
             placeholder="Please discuss, please do not spam, share links to make money, unhealthy,... to avoid having your account locked"
           />
-          <ButtonSend onClick={handleSendComment}>Send</ButtonSend>
+          <ButtonSend onClick={handleSendComment}>Gửi</ButtonSend>
         </DivInput>
       </DivComment>
       <ListComment dataComment={dataComment} />

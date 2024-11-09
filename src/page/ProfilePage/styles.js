@@ -97,6 +97,8 @@ export const DivImage = styled.div`
 
   & .loading-container {
     margin: 100px 0;
+    position: relative !important;
+    background-color: transparent !important;
   }
 `;
 

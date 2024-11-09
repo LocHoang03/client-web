@@ -73,6 +73,7 @@ const ResultPage = (props) => {
     ]);
   }, [dispatch]);
 
+  //  tìm kiếm phim theo từ khóa
   useEffect(() => {
     setIsLoading(true);
     const data = state.type === 'movie' ? movies : series;
@@ -144,7 +145,7 @@ const ResultPage = (props) => {
       </Helmet>
       <DivContent>
         <Title>
-          Keyword search results: "
+          Kết quả tìm kiếm từ khóa: "
           {location.state && location.state.searchKey !== null
             ? location.state.searchKey
             : result}
@@ -175,7 +176,8 @@ const ResultPage = (props) => {
           </RowPage>
         ) : (
           <DivNull>
-            <InfoCircleOutlined /> No results were found
+            <InfoCircleOutlined />
+            Không tìm thấy kết quả nào
           </DivNull>
         )}
       </DivContent>

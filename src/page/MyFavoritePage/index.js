@@ -1,11 +1,19 @@
 import { useEffect, useState, useContext } from 'react';
-import { DivFilm, Title, ColPage, RowPage, DivContent } from './styles';
+import {
+  DivFilm,
+  Title,
+  ColPage,
+  RowPage,
+  DivContent,
+  DivInfo,
+} from './styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAllMovies } from '../../redux/action/home/movies';
 import Film from '../../components/FilmAndMovies/FilmComponent';
 import LoadingPage from '../LoadingPage';
 import { CheckLoginContext } from '../../contexts/LoginContext';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 const MyFavoritePage = () => {
   const [data, setData] = useState();
@@ -18,6 +26,7 @@ const MyFavoritePage = () => {
   const movies = useSelector((state) => state.moviesSlice);
   const series = useSelector((state) => state.seriesSlice);
 
+  // responsive
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -48,6 +57,7 @@ const MyFavoritePage = () => {
     dispatch(fetchAllMovies());
   }, [dispatch]);
 
+  // lấy phim người dùng đã like
   useEffect(() => {
     const fetchData = async () => {
       if (movies && series) {
@@ -77,10 +87,10 @@ const MyFavoritePage = () => {
         <link rel="canonical" href={process.env.REACT_APP_PUBLIC_HOST} />
       </Helmet>
       <DivContent>
-        <Title>Your favorite movie and series list</Title>
+        <Title>Danh sách phim yêu thích</Title>
 
         <RowPage justify="start">
-          {data &&
+          {data && data.length > 0 ? (
             data.map((item, id) => {
               return (
                 <ColPage key={id} span={slide}>
@@ -92,7 +102,12 @@ const MyFavoritePage = () => {
                   />
                 </ColPage>
               );
-            })}
+            })
+          ) : (
+            <DivInfo>
+              <p>Danh sách trống!!</p>
+            </DivInfo>
+          )}
         </RowPage>
       </DivContent>
     </DivFilm>

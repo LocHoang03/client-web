@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import HeaderPaymentComponent from '../../components/HeaderPaymentComponent';
 import Footer from '../../components/Footer';
 
+// trang đã đăng nhập = gg thành công nhưng bị admin ban tài khoản
 function LoginSuccessPage() {
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
@@ -55,8 +56,8 @@ function LoginSuccessPage() {
           </PaymentHeader>
           <DivContent>
             <p>
-              Your account has been locked. Please contact customer service for
-              support!!
+              Tài khoản của bạn đã bị khóa. Vui lòng liên hệ với dịch vụ khách
+              hàng để được hỗ trợ!!
             </p>
           </DivContent>
           <DivFooter>
