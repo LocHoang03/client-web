@@ -24,6 +24,7 @@ function LoginContext({ children }) {
       },
     });
     const responseJson = await response.json();
+    console.log(responseJson);
     if (responseJson.success === true) {
       setIsLogin(2);
     } else {

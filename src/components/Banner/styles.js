@@ -26,6 +26,7 @@ export const DivInfo = styled.div`
   max-width: 1200px;
   margin: 1rem auto 0;
   display: flex;
+  justify-content: space-between;
 
   @media (max-width: 1250px) {
     max-width: calc(100% - 40px);

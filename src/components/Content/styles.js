@@ -9,7 +9,7 @@ export const DivContent = styled.div`
 
 export const DivTitle = styled.div`
   text-align: left;
-  margin-left: 20px;
+  // margin-left: 20px;
   position: relative;
   z-index: 100;
   color: var(--white);

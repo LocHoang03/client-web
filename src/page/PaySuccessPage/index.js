@@ -44,8 +44,9 @@ function PaySuccessPage(props) {
         },
       });
       const responseJson = await response.json();
+      console.log(responseJson);
       if (responseJson.success === true) {
-        setDataPaymentSuccess(responseJson.data);
+        setDataPaymentSuccess(responseJson.data[0]);
       }
     };
     addPayment();
@@ -102,7 +103,8 @@ function PaySuccessPage(props) {
                   <p>{dataPaymentSuccess._id}</p>
                 </ItemDetail>
                 <ItemDetail>
-                  <p>Tên gói:</p> <p>{dataPaymentSuccess.packageId.typePack}</p>
+                  <p>Tên gói:</p>{' '}
+                  <p>{dataPaymentSuccess?.packageId?.typePack}</p>
                 </ItemDetail>
 
                 <ItemDetail>
@@ -121,7 +123,7 @@ function PaySuccessPage(props) {
                 </ItemDetail>
                 <ItemDetail>
                   <p>Giá:</p>
-                  <p>{dataPaymentSuccess.packageId.monthlyPrice} USD/tháng</p>
+                  <p>{dataPaymentSuccess?.packageId?.monthlyPrice} USD/tháng</p>
                 </ItemDetail>
               </ListInfoDetail>
             </DivDetail>
