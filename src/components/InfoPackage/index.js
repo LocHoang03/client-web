@@ -38,7 +38,13 @@ function InfoPackage() {
             Chất lượng hình ảnh: {data && data.packageId.qualityPicture}
           </ItemInfo>
           <ItemInfo>
-            Giá hàng tháng: {data && data.packageId.monthlyPrice} USD
+            Giá hàng tháng:{' '}
+            {data &&
+              data.packageId.monthlyPrice.toLocaleString('en-US', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              })}{' '}
+            VND
           </ItemInfo>
           <ItemInfo>
             Hỗ trợ thiết bị: {data && data.packageId.deviceSupport}

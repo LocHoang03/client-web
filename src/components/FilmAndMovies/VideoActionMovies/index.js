@@ -7,11 +7,14 @@ import {
   DivContentVideo,
   RatingAction,
   DivListEpisode,
+  PlayerWrapper,
+  LoadingContainer,
 } from './styles';
 import { Tag, Rate } from 'antd';
 import { FacebookShareButton } from 'react-share';
 import ReactPlayer from 'react-player/lazy';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function VideoActionMovies({
   data,
@@ -27,6 +30,7 @@ function VideoActionMovies({
   number,
   seriesId,
 }) {
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const handleLike = () => {
     if (type === 'movies') {
@@ -41,20 +45,17 @@ function VideoActionMovies({
   return (
     <>
       <TitleVideo>{data?.film?.title || data?.seriesId?.title}</TitleVideo>
+
       <DivVideo>
-        <ReactPlayer
-          url={data?.film?.videoUrl?.url || data?.videoUrl?.url}
-          playing={true}
-          controls={true}
-          volume={true}
-          config={{
-            file: {
-              attributes: {
-                crossOrigin: 'anonymous',
-              },
-            },
-          }}
-        />
+        {' '}
+        <video
+          id="videoPlayer"
+          src={data?.film?.videoUrl?.url || data?.videoUrl?.url}
+          controls
+          crossOrigin="anonymous"
+          width="100%"
+          onLoadedData={() => setLoading(false)}
+          height="100%"></video>{' '}
       </DivVideo>
       <DivContentVideo>
         <DivAction>

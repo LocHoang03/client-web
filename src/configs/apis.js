@@ -1,3 +1,4 @@
+// lưu trữ các đường dẫn API gọi tới backend
 export const API_FETCH_ALL_COMMON_QUESTIONS = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/common-questions`;
 
 export const API_LOGIN = `${process.env.REACT_APP_PUBLIC_HOST_BACKEND}/user/auth/login`;

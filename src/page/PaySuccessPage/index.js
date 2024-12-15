@@ -123,7 +123,7 @@ function PaySuccessPage(props) {
                 </ItemDetail>
                 <ItemDetail>
                   <p>Giá:</p>
-                  <p>{dataPaymentSuccess?.packageId?.monthlyPrice} USD/tháng</p>
+                  <p>{dataPaymentSuccess?.packageId?.monthlyPrice} VND/tháng</p>
                 </ItemDetail>
               </ListInfoDetail>
             </DivDetail>

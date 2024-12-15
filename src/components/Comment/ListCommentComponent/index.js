@@ -56,13 +56,13 @@ function ListCommentComponent({
     const days = Math.floor(hours / 24);
 
     if (days > 0) {
-      return `${days} day${days > 1 ? 's' : ''} ago`;
+      return `${days} ngày trước`;
     } else if (hours > 0) {
-      return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+      return `${hours} giờ trước`;
     } else if (minutes > 0) {
-      return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+      return `${minutes} phút trước`;
     } else {
-      return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+      return `${seconds} giây trước`;
     }
   }
 
@@ -104,7 +104,7 @@ function ListCommentComponent({
                   <div>
                     <DivLeft>
                       <NameUser>
-                        {item.userId.firstName} {item.userId.lastName}
+                        {item.userId.lastName} {item.userId.firstName}
                       </NameUser>
                       <ContentUser>{item.content}</ContentUser>
                     </DivLeft>

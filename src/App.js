@@ -47,6 +47,7 @@ function App() {
   const [visible, setVisible] = useState(false);
   const [file, setFile] = useState();
   const [imagePreview, setImagePreview] = useState();
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const { pathname } = useLocation();
   const location = useLocation();
@@ -94,6 +95,49 @@ function App() {
       }
     }
   }, [pathname, series, movies, navigate]);
+
+  // useEffect(() => {
+  //   setIsSuccess(false);
+
+  //   if (isLogin !== undefined) {
+  //     const currentPath = location.pathname;
+
+  //     if (isLogin === -1) {
+  //       const allowedPaths = [
+  //         '/auth/signup',
+  //         '/login-success',
+  //         '/auth/login',
+  //         '/auth/reset-password',
+  //         '/auth/forgot-password',
+  //         '/landing-page',
+  //       ];
+
+  //       const isAllowedPath = allowedPaths.some((path) => currentPath === path);
+
+  //       if (!isAllowedPath) {
+  //         navigate('/landing-page');
+  //       }
+  //     } else if (isLogin === 0) {
+  //       const path = '/two-factor-authentication';
+  //       if (currentPath !== path) {
+  //         navigate(path);
+  //       }
+  //     } else if (isLogin === 1) {
+  //       const allowedPaths = [
+  //         '/choose-payment',
+  //         '/payment-success',
+  //         '/option-checkout',
+  //         '/checkout',
+  //       ];
+  //       const isAllowedPath = allowedPaths.some((path) => currentPath === path);
+
+  //       if (!isAllowedPath) {
+  //         navigate('/choose-payment');
+  //       }
+  //     }
+  //     setIsSuccess(true);
+  //   }
+  // }, [isLogin, pathname]);
 
   // cuộn lên đầu trang khi chuyển qua url mới
   useEffect(() => {
@@ -183,6 +227,7 @@ function App() {
       setSocket(newSocket);
       setSocketAdmin(newSocketAdmin);
 
+      // nhận tin từ admin gửi tới
       newSocket.on('receiveChatCustomer', (data) => {
         console.log('data chat', data);
         setMessage((prev) => [...prev, data]);

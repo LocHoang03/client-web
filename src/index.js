@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import LoginContext from './contexts/LoginContext';
 import { HelmetProvider } from 'react-helmet-async';
 
+// file chạy source
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

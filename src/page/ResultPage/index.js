@@ -18,6 +18,7 @@ import SearchComponent from '../../components/Search';
 import fetchDataLook from '../../utils/fetdataLook';
 import { fetchAllSeries } from '../../redux/action/home/series';
 import { Helmet } from 'react-helmet-async';
+import { searchResult } from '../../utils/searchResult';
 
 const ResultPage = (props) => {
   const [data, setData] = useState();
@@ -76,7 +77,7 @@ const ResultPage = (props) => {
   //  tìm kiếm phim theo từ khóa
   useEffect(() => {
     setIsLoading(true);
-    const data = state.type === 'movie' ? movies : series;
+    const data = state.type === 'movies' ? movies : series;
     let arrayData = [];
     if (location?.state?.searchKey) {
       if (movies && series) {
@@ -102,24 +103,52 @@ const ResultPage = (props) => {
         }
       }
     } else {
-      for (let item of data.data) {
-        if (
-          result !== null &&
-          category !== null &&
-          country !== null &&
-          year !== null
-        ) {
+      if (!state.type) {
+        searchResult(movies, result, category, country, year, arrayData);
+        searchResult(series, result, category, country, year, arrayData);
+      } else {
+        for (let item of data.data) {
+          let isTitleMatch = false;
+          let isCategoryMatch = false;
+          let isCountryMatch = false;
+          let isReleaseDateMatch = false;
           if (
             item?.title &&
-            item?.title.toLowerCase().includes(result.toLowerCase()) &&
+            item?.title.toLowerCase().includes(result.toLowerCase())
+          ) {
+            isTitleMatch = true;
+          }
+          if (
             item?.listCategoryId &&
-            item?.listCategoryId.some((cate) => cate.includes(category)) &&
+            item?.listCategoryId.some((cate) =>
+              cate.toString().toLowerCase().includes(category.toLowerCase()),
+            )
+          ) {
+            isCategoryMatch = true;
+          }
+
+          if (
             item?.country &&
             item?.country.some((coun) =>
               coun.toLowerCase().includes(country.toLowerCase()),
-            ) &&
+            )
+          ) {
+            isCountryMatch = true;
+          }
+
+          if (
             item?.releaseDate &&
             item?.releaseDate.toString().includes(year)
+          ) {
+            isReleaseDateMatch = true;
+          }
+
+          // Nếu tất cả các điều kiện đều thỏa mãn
+          if (
+            isTitleMatch &&
+            isCategoryMatch &&
+            isCountryMatch &&
+            isReleaseDateMatch
           ) {
             arrayData.push(item);
           }
@@ -132,6 +161,7 @@ const ResultPage = (props) => {
       setIsLoading(false);
     }, 500);
   }, [location?.state?.searchKey, result, category, year, country]);
+  console.log(state.type);
 
   if (!movies || !data || !options || !options1 || !options2 || isLoading) {
     return <LoadingPage />;
@@ -156,6 +186,7 @@ const ResultPage = (props) => {
             options={options}
             options1={options1}
             options2={options2}
+            type={state.type}
           />
         </DivSearch>
         {data && data.length > 0 ? (
@@ -168,7 +199,7 @@ const ResultPage = (props) => {
                       title={item.title}
                       image={item.imageUrl.url}
                       idFilm={item._id}
-                      type={'movies'}
+                      type={state.type === 'movies' ? 'movies' : 'series'}
                     />
                   </ColPage>
                 );

@@ -1,7 +1,7 @@
 import { DivInput, ButtonSend } from './styles';
 import { Input } from 'antd';
 import { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { createCommentReply } from '../../../redux/action/comment/comment';
 import { useDispatch } from 'react-redux';
 import { CheckLoginContext } from '../../../contexts/LoginContext';
@@ -12,19 +12,23 @@ function ReplyTextComponent(props) {
 
   const { userInfo } = useContext(CheckLoginContext);
 
-  const { filmId } = useParams();
+  const { filmId, seriesId } = useParams();
   const dispatch = useDispatch();
 
   const handleSendComment = async () => {
     if (text) {
+      let type = window.location.pathname.startsWith('/film/watching-movies')
+        ? 'Movies'
+        : 'Series';
       const data = {
         data: {
           userId: userInfo.userId,
           content: text,
-          moviesId: filmId,
+          moviesId: type === 'Movies' ? filmId : seriesId,
           parentCommentId: props.item._id,
-          parentUserId: props.item.userId,
+          parentUserId: props.item.userId._id,
           rootCommentId: props.rootId,
+          type: type,
         },
         userInfo: userInfo,
         parentUserId: props.item.userId,
@@ -42,7 +46,7 @@ function ReplyTextComponent(props) {
       <TextArea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Write feedback"
+        placeholder="Viết phản hồi"
       />
       <ButtonSend onClick={handleSendComment}>Gửi</ButtonSend>
     </DivInput>

@@ -94,13 +94,13 @@ function FormUpdateProfile(props) {
             layout="vertical"
             autoComplete="off">
             <InputItem
-              label="Last Name"
+              label="Họ"
               name="lastName"
               message="Vui lòng nhập họ của bạn!"
               input={<Input />}
             />
             <InputItem
-              label="First Name"
+              label="Tên"
               name="firstName"
               message="Vui lòng nhập tên của bạn!"
               input={<Input />}
@@ -113,14 +113,15 @@ function FormUpdateProfile(props) {
               input={<Input />}
             />
             <InputItem
-              label="Phone Number"
+              label="Số điện thoại"
               name="phoneNumber"
               message="Vui lòng nhập số điện thoại của bạn!"
               input={<Input />}
             />
             <InputItem
-              label="Gender"
+              label="Giới tính"
               name="sex"
+              message="Vui lòng nhập giới tính của bạn!"
               input={
                 <Select
                   style={{
@@ -158,19 +159,19 @@ function FormUpdateProfile(props) {
             layout="vertical"
             autoComplete="off">
             <InputItem
-              label="Current Password"
+              label="Mật khẩu hiện tại"
               name="currentPassword"
               message="Vui lòng nhập mật khẩu hiện tại của bạn!"
               input={<Input.Password />}
             />
             <InputItem
-              label="New Password"
+              label="Mật khẩu mới"
               name="newPassword"
               message="Vui lòng nhập mật khẩu mới của bạn!"
               input={<Input.Password />}
             />
             <InputItem
-              label="Confirm New Password"
+              label="Xác nhận mật khẩu mới"
               name="confirmNewPassword"
               message="Vui lòng nhập xác nhận mật khẩu mới của bạn!"
               input={<Input.Password />}

@@ -12,7 +12,7 @@ import {
   createComment,
   fetchAllComment,
 } from '../../../redux/action/comment/comment';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ListComment from '../ListComment';
 import { CheckLoginContext } from '../../../contexts/LoginContext';
@@ -48,6 +48,9 @@ function CommentComponent(props) {
 
   //  thực hiện binh fluan
   const handleSendComment = async () => {
+    let type = window.location.pathname.startsWith('/film/watching-movies')
+      ? 'Movies'
+      : 'Series';
     if (!value) {
       return;
     }
@@ -56,6 +59,7 @@ function CommentComponent(props) {
         userId: userInfo.userId,
         content: value,
         moviesId: props.type === 'movies' ? filmId : seriesId,
+        type: type,
       },
       userInfo: userInfo,
     };
@@ -76,7 +80,7 @@ function CommentComponent(props) {
           <TextArea
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            placeholder="Please discuss, please do not spam, share links to make money, unhealthy,... to avoid having your account locked"
+            placeholder="Hãy cùng thảo luận, vui lòng không spam, chia sẻ link kiếm tiền, không lành mạnh,... để tránh bị khóa tài khoản"
           />
           <ButtonSend onClick={handleSendComment}>Gửi</ButtonSend>
         </DivInput>

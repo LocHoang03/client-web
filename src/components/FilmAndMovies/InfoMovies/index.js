@@ -10,11 +10,11 @@ function InfoMovies({ data }) {
       </TextFilm>
       <TextFilm>Đạo diễn: {data?.film?.director}</TextFilm>
       <TextFilm>Diễn viên: {data?.film?.cast}</TextFilm>
-      <TextFilm>Thời lượng: {data?.film?.duration} minute</TextFilm>
+      <TextFilm>Thời lượng: {data?.film?.duration} phút</TextFilm>
       <TextFilm>
         <span>Đánh giá:&nbsp;</span>
         <span>
-          {data?.film?.rating}/5 ({data?.film?.totalRating} evaluate)
+          {data?.film?.rating}/5 ({data?.film?.totalRating} đánh giá)
         </span>
       </TextFilm>
       <TextFilm>

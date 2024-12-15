@@ -60,7 +60,7 @@ function ForgotPasswordPage() {
 
   useEffect(() => {
     form.setFieldsValue({
-      sex: 'female',
+      sex: 'Nữ',
     });
   }, [form]);
 

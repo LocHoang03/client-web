@@ -24,16 +24,12 @@ function SignupPage() {
   const [form] = Form.useForm();
   const [options, setOptions] = useState([
     {
-      value: 'male',
+      value: 'Nam',
       label: 'Nam',
     },
     {
-      value: 'female',
+      value: 'Nữ',
       label: 'Nữ',
-    },
-    {
-      value: 'other',
-      label: 'Khác',
     },
   ]);
   const [messageApi, contextHolder] = message.useMessage();
@@ -45,6 +41,7 @@ function SignupPage() {
     });
   };
 
+  // bấm đăng ký
   const onFinish = async (values) => {
     const response = await fetch(API_SIGNUP, {
       method: 'POST',
@@ -106,15 +103,15 @@ function SignupPage() {
               onFinishFailed={onFinishFailed}
               autoComplete="off">
               <ItemForm
-                label="Tên"
-                name="firstName"
-                message="Vui lòng nhập tên của bạn!"
-                input={<Input onFocus={handleFocus} />}
-              />
-              <ItemForm
                 label="Họ"
                 name="lastName"
                 message="Vui lòng nhập họ của bạn!"
+                input={<Input onFocus={handleFocus} />}
+              />
+              <ItemForm
+                label="Tên"
+                name="firstName"
+                message="Vui lòng nhập tên của bạn!"
                 input={<Input onFocus={handleFocus} />}
               />
               <ItemForm

@@ -30,6 +30,34 @@ function TermAndConditionPage() {
             dụng này và bạn đồng ý tuân thủ chúng. Nếu như bạn không đồng ý với
             các Điều khoản sử dụng này, vui lòng không sử dụng Trang web.
           </Text>
+          <Title>VIỆC BỊ KHÓA TÀI KHOẢN VÀ CÁCH MỞ KHÓA</Title>
+          <Text>
+            Nếu tài khoản của bạn bị khóa, có thể do bạn đã vi phạm các Điều
+            khoản và Điều kiện khi sử dụng Trang web. Một số lý do phổ biến dẫn
+            đến việc bị khóa tài khoản bao gồm: Vi phạm các quy định về nội dung
+            hoặc hành vi không phù hợp sử dụng tài khoản với mục đích lừa đảo,
+            giả mạo, hoặc vi phạm pháp luật. cung cấp thông tin không chính xác
+            hoặc gian lận trong quá trình sử dụng.....
+          </Text>
+          <Text>
+            Cách mở khóa tài khoản: Bạn hoặc người giám hộ có thể liên hệ với
+            chúng tôi tại{' '}
+            <a href="mailto:hoangphuocloc.phurieng@gmail.com">
+              hoangphuocloc.phurieng@gmail.com
+            </a>{' '}
+            để biết chi tiết lý do tài khoản bị khóa và quy trình mở khóa.
+            <br /> Xác minh thông tin: Bạn sẽ cần cung cấp các thông tin xác
+            thực liên quan đến tài khoản để chứng minh quyền sở hữu và giải
+            quyết vấn đề.
+            <br /> Thực hiện cam kết: Nếu việc khóa tài khoản liên quan đến hành
+            vi vi phạm, bạn có thể được yêu cầu cam kết không tái phạm trong
+            tương lai.
+          </Text>
+          <Text>
+            Chúng tôi cam kết hỗ trợ bạn nhanh chóng và đảm bảo việc tuân thủ
+            các quy định để tạo môi trường sử dụng Trang web an toàn và lành
+            mạnh.
+          </Text>
           <Title>VIỆC SỬ DỤNG TRANG WEB CỦA BẠN NẾU BẠN DƯỚI 18 TUỔI</Title>
           <Text>
             Nếu bạn dưới 18 tuổi, bạn có thể cần cha mẹ/người giám hộ giúp đỡ

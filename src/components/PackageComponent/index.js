@@ -52,7 +52,13 @@ function PackageComponent({
           <ItemInfo>
             <DivItemInfo>
               <div>Giá hàng tháng</div>
-              <div>{item.monthlyPrice}</div>
+              <div>
+                {item.monthlyPrice.toLocaleString('en-US', {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })}{' '}
+                VND
+              </div>
             </DivItemInfo>
           </ItemInfo>
           <ItemInfo>

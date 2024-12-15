@@ -101,7 +101,7 @@ function ModalCustomerSupport({
         setRoomId(json.data.roomId);
         setNameAdmin(
           json.data?.participants?.adminId
-            ? `${json.data.participants.adminId.firstName} ${json.data.participants.adminId.lastName}`
+            ? `${json.data.participants.adminId.lastName} ${json.data.participants.adminId.firstName}`
             : '',
         );
         socketConnect.emit('joinRoom', json.data);
@@ -375,8 +375,8 @@ function ModalCustomerSupport({
             description="Bạn có chắc chắn rời khỏi phòng này không?"
             onConfirm={onConfirm}
             onCancel={onCancel}
-            okText="Yes"
-            cancelText="No">
+            okText="Đồng ý"
+            cancelText="Hủy">
             <BtnLog>
               <ArrowLeftOutlined />
             </BtnLog>

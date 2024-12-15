@@ -70,7 +70,8 @@ function ListComment({ dataComment }) {
           {data &&
             data.length &&
             data.map((item, id) => {
-              if (!item.parentCommentId) {
+              if (!item.parentCommentId && !item.parentUserId) {
+                console.log('item', id, item);
                 return (
                   <>
                     <ListCommentComponent

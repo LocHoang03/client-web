@@ -290,13 +290,13 @@ const DetailSeriesPage = (props) => {
         </ColDetail>
         <ColDetail span={7} lg={8} xs={24} right={'right'}>
           <FilmMost
-            title={'Newly updated movie'}
+            title={'Phim mới cập nhật'}
             film={mostNew.data}
             filmId={seriesId}
             type="series"
           />
           <FilmMost
-            title={'Phim được xem nhiều nhất'}
+            title={'Phim hay cho bạn'}
             film={mostView.data}
             filmId={seriesId}
             type="series"

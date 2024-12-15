@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import {
   DivContainer,
   RowDetail,
@@ -260,7 +260,7 @@ const DetailFilmPage = (props) => {
             type="movies"
           />
           <FilmMost
-            title={'Phim được xem nhiều nhất'}
+            title={'Phim hay cho bạn'}
             film={mostView.data}
             filmId={filmId}
             type="movies"

@@ -11,6 +11,7 @@ function LoginContext({ children }) {
 
   const location = useLocation();
 
+  //  kiểm tra người dùng mua gói phim chưa
   const getOrder = async (userId) => {
     const data = {
       userId: userId,
@@ -24,13 +25,17 @@ function LoginContext({ children }) {
       },
     });
     const responseJson = await response.json();
-    console.log(responseJson);
     if (responseJson.success === true) {
       setIsLogin(2);
     } else {
       setIsLogin(1);
     }
   };
+
+  // set lại login = undefined
+  useEffect(() => {
+    setIsLogin(undefined);
+  }, [location.pathname]);
 
   useEffect(() => {
     setUserInfo(undefined);
@@ -45,6 +50,7 @@ function LoginContext({ children }) {
 
       if (json.success === true) {
         setUserInfo(json.userInfo);
+        //  isAuth xem có xác thực chưa
         if (json.isAuth) {
           getOrder(json.userInfo.userId);
         } else {
@@ -63,6 +69,7 @@ function LoginContext({ children }) {
     }
   }, [location]);
 
+  //  thực hiện khi người dùng update lại profile
   useEffect(() => {
     setIsUpdateUser(false);
     const fetchUserInfo = async () => {

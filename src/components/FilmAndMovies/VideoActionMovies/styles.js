@@ -9,7 +9,8 @@ export const TitleVideo = styled.h2`
 
 export const DivVideo = styled.div`
   width: 100%;
-  & div {
+  position: relative;
+  & video {
     width: 100% !important;
     height: 100% !important;
     border-radius: 20px !important;
@@ -99,4 +100,31 @@ export const DivListEpisode = styled.div`
       background-color: #1c79ff !important;
     }
   }
+`;
+
+export const PlayerWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  z-index: 1000;
+`;
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
 `;

@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function SearchComponent({ options, options1, options2, type }) {
+  console.log(type);
   const [valueCategory, setValueCategory] = useState(null);
   const [valueCountry, setValueCountry] = useState(null);
   const [valueYear, setValueYear] = useState(null);
@@ -28,7 +29,12 @@ function SearchComponent({ options, options1, options2, type }) {
       }`,
       {
         state: {
-          type: type === 'series' ? 'series' : 'movies',
+          type:
+            type === undefined
+              ? undefined
+              : type === 'series'
+              ? 'series'
+              : 'movies',
         },
       },
     );

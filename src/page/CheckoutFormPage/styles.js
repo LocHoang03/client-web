@@ -21,7 +21,7 @@ export const DivHeader = styled.div`
 export const DivContainer = styled.div`
   margin: 60px auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1130px;
   display: flex;
   align-items: flex-start;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;

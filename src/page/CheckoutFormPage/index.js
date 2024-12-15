@@ -99,7 +99,14 @@ const CheckoutFormPage = (() => {
                   <ItemInfo>
                     Chất lượng hình ảnh: {data.qualityPicture}
                   </ItemInfo>
-                  <ItemInfo>Giá hàng tháng: {data.monthlyPrice} USD</ItemInfo>
+                  <ItemInfo>
+                    Giá hàng tháng:{' '}
+                    {data.monthlyPrice.toLocaleString('en-US', {
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    })}{' '}
+                    VND
+                  </ItemInfo>
                   <ItemInfo>Thiết bị hỗ trợ: {data.deviceSupport}</ItemInfo>
                 </ListInfo>
               </DivProductInfo>

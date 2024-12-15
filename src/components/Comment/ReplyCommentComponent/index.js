@@ -55,7 +55,7 @@ function ReplyComment({
 
   function timeAgo() {
     const now = new Date();
-    const commentDate = new Date(item.createAt);
+    const commentDate = new Date(itemChild.createAt);
     const diff = Math.abs(now - commentDate);
 
     const seconds = Math.floor(diff / 1000);
@@ -64,13 +64,13 @@ function ReplyComment({
     const days = Math.floor(hours / 24);
 
     if (days > 0) {
-      return `${days} day${days > 1 ? 's' : ''} ago`;
+      return `${days} ngày trước`;
     } else if (hours > 0) {
-      return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+      return `${hours} giờ trước`;
     } else if (minutes > 0) {
-      return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+      return `${minutes} phút trước`;
     } else {
-      return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+      return `${seconds} giây trước`;
     }
   }
 
@@ -106,12 +106,12 @@ function ReplyComment({
                   <div>
                     <DivLeft>
                       <NameUser>
-                        {itemChild.userId.firstName} {itemChild.userId.lastName}
+                        {itemChild.userId.lastName} {itemChild.userId.firstName}
                       </NameUser>
                       <ContentUser>
                         <b>
-                          @{itemChild?.parentUserId?.firstName}{' '}
-                          {itemChild?.parentUserId?.lastName}
+                          @{itemChild?.parentUserId?.lastName}{' '}
+                          {itemChild?.parentUserId?.firstName}
                         </b>{' '}
                         {itemChild.content}
                       </ContentUser>
